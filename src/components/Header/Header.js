@@ -7,7 +7,7 @@ export const Header = ({ logo }) => {
   return (
     <>
       <header>
-        <div className="header-araa">
+        <div className="header-area">
           <Container>
             <Row>
               <Col xl={2}>
