@@ -9,7 +9,7 @@ export const Header = ({ logo }) => {
       <header>
         <div className="header-area">
           <Container>
-            <Row>
+            <Row className='align-items-center'>
               <Col xl={2}>
                 <ul>
                   <div className="logo">
@@ -41,6 +41,7 @@ export const Header = ({ logo }) => {
                 <Button text={"Log In"} link={"/login"} styleClass={'normalBtn'}/>
                 </div>
               </Col>
+            <hr />
             </Row>
           </Container>
         </div>
