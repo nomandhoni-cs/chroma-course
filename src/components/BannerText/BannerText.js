@@ -1,9 +1,14 @@
 import React from 'react'
-
-export const BannerText = ({heading}) => {
+import Button from '../Button/Button'
+import './BannerText.css'
+export const BannerText = ({heading, highlitedWord, subheading}) => {
   return (
-    <div className='bannerText'>
-        <h1>{heading}</h1>
+    <div className='banner-text' >
+        <h1>{heading}<span className='highlitedWord'>{highlitedWord}</span></h1>
+        <br />
+        <h3>{subheading}</h3>
+        <br />
+        <Button text={'Explore'} styleClass='filledBtn' />
         </div>
   )
 }

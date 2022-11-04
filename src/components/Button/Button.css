@@ -11,10 +11,10 @@
 .filledBtn{
     background: #04F06A;
     color: #ffffff;
+    font-weight: 600;
+    font-size: 1.3vw;
 }
 .filledBtn:hover{
     border: 1px solid #04F06A;
-    font-size: 1.3vw;
-    font-weight: 600;
     background-color: #ffffff;
 }
