@@ -1,5 +1,5 @@
 import React from 'react'
-// import { BsStarFill, BsGithub } from "react-icons/bs";
+import { BsStarFill, BsGithub } from 'react-icons/bs';
 import { Col, Container, Row } from 'react-bootstrap'
 import './Footer.css'
 export const Footer = () => {
@@ -31,7 +31,7 @@ export const Footer = () => {
                 </Col>
             </Row>
             <div className='text-center'>
-            {/* <h5>If you like my project give it a <BsStarFill /> on <BsGithub /></h5> */}
+            <h5>If you like my project give a <BsStarFill /> on <BsGithub /></h5>
         </div>
         </Container>
         <section className='copyright text-center'><h4>Copyright {thisYear.getYear() + 1900}</h4></section>
