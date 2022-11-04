@@ -42,7 +42,6 @@ export const Header = ({ logo }) => {
                 <Button text={"Sign Up"} link={"/signup"} styleClass={'filledBtn'}/>
                 </div>
               </Col>
-            <hr />
             </Row>
           </Container>
         </div>

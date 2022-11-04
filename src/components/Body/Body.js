@@ -17,6 +17,7 @@ export const Body = ({halfBanner}) => {
             </Col>
         </Row>
         </div>
+        <hr />
     </div>
   )
 }

@@ -1,9 +1,12 @@
 .banner-text{
-    margin-top: 5vw;
+    margin: 3vw 0;
 }
 .banner-text h1{
-    font-size: 4.4vw;
+    font-size: 4.5vw;
     font-weight: 600;
+}
+.banner-text h3{
+    font-size: 2vw;
 }
 .highlitedWord{
     color: #04F06A;
