@@ -13,13 +13,14 @@ export const Body = ({halfBanner, courseList}) => {
         <div className="top-banner">
         <Row>
             <Col xl={6}>
-                <BannerText heading={'Looking for learn Something new?'}/>
+                <BannerText heading={'Looking for upgrading your '} highlitedWord = {'Skill?'} subheading={"Don't worry, you found the right place!"}/>
             </Col>
             <Col xl={6}>
                 <BannerImg halfBanner={halfBanner} />
             </Col>
         </Row>
         </div>
+        <hr />
     </div>
 
   )

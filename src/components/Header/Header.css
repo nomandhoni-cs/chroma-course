@@ -1,21 +1,18 @@
-.row{
-    text-align: center;
-    /* margin: 1.3vw auto; */
-}
+/* header{
+    border-bottom: .11px dashed #454545;
+} */
 .logo img{
     width: 100%;
 }
 .main-menu ul li{
     display: inline-block;
 }
-ul{
-    /* padding: .5vw; */
-}
 .main-menu ul li a{
+    font-family: 'poppins';
     font-size: 1.3vw;
     font-weight: 600;
     text-decoration: none;
-    text-transform: uppercase;
+    text-transform: capitalize;
     color: #454545;
     display: block;
     padding: 1vw 0;
@@ -23,4 +20,7 @@ ul{
 }
 ul li:hover a{
     color: #04F06A;
+}
+.login-btn a{
+    margin: 0 .51vw;
 }

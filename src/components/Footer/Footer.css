@@ -1,0 +1,14 @@
+footer ul li{
+    display: block;
+}
+footer ul li a{
+    text-decoration: none;
+    color: #212529;
+
+}
+.copyright{
+    background-color: #04F06A;
+}
+.copyright h4{
+    padding: 0.6vw;
+}
