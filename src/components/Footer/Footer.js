@@ -10,23 +10,23 @@ export const Footer = () => {
             <Row className='text-center'>
                 <Col xl={4}>
                     <ul>
-                        <li><a href="">Facebook</a></li>
-                        <li><a href="">Twitter</a></li>
-                        <li><a href="">LinkedIn</a></li>
+                        <li><a href="/">Facebook</a></li>
+                        <li><a href="/">Twitter</a></li>
+                        <li><a href="/">LinkedIn</a></li>
                     </ul>
                 </Col>
                 <Col xl={4}>
                     <ul>
-                        <li><a href="">Facebook</a></li>
-                        <li><a href="">Twitter</a></li>
-                        <li><a href="">LinkedIn</a></li>
+                        <li><a href="/">Facebook</a></li>
+                        <li><a href="/">Twitter</a></li>
+                        <li><a href="/">LinkedIn</a></li>
                     </ul>
                 </Col>
                 <Col xl={4}>
                     <ul>
-                        <li><a href="">Facebook</a></li>
-                        <li><a href="">Twitter</a></li>
-                        <li><a href="">LinkedIn</a></li>
+                        <li><a href="/">Facebook</a></li>
+                        <li><a href="/">Twitter</a></li>
+                        <li><a href="/">LinkedIn</a></li>
                     </ul>
                 </Col>
             </Row>
