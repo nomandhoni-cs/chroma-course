@@ -4,7 +4,10 @@ import { BannerImg } from '../BannerImg/BannerImg.js'
 import { BannerText } from '../BannerText/BannerText.js'
 
 
-export const Body = ({halfBanner}) => {
+export const Body = ({halfBanner, courseList}) => {
+  // courseList.map((course) => {
+  //   console.log(course);
+  // })
   return (
     <div className='container'>
         <div className="top-banner">
@@ -19,5 +22,6 @@ export const Body = ({halfBanner}) => {
         </div>
         <hr />
     </div>
+
   )
 }
