@@ -1,0 +1,6 @@
+/* How much flag display in a Row  */
+.course-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
