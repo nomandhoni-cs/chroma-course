@@ -7,9 +7,9 @@ export const Header = ({ logo }) => {
   return (
     <>
       <header>
-        <div className="header-araa">
+        <div className="header-area">
           <Container>
-            <Row>
+            <Row className='align-items-center text-center'>
               <Col xl={2}>
                 <ul>
                   <div className="logo">
@@ -19,7 +19,7 @@ export const Header = ({ logo }) => {
                   </div>
                 </ul>
               </Col>
-              <Col xl={8}>
+              <Col xl={7}>
                 <div className="main-menu text-center">
                   <nav>
                     <ul>
@@ -36,9 +36,10 @@ export const Header = ({ logo }) => {
                   </nav>
                 </div>
               </Col>
-              <Col xl={2}>
+              <Col xl={3}>
                 <div className="login-btn">
                 <Button text={"Log In"} link={"/login"} styleClass={'normalBtn'}/>
+                <Button text={"Sign Up"} link={"/signup"} styleClass={'filledBtn'}/>
                 </div>
               </Col>
             </Row>
