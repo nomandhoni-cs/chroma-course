@@ -1,7 +1,8 @@
 import React from 'react'
 import './Cart.css'
 
-export const Cart = () => {
+export const Cart = (props) => {
+    console.log(props.cart)
   return (
     <>
     <div className="cart-headding">
