@@ -9,10 +9,10 @@ const courseInfo = [{
   "id": 1,
   "instructor": "Bartlet Keep",
   "instructor_photo": "https://robohash.org/quivoluptatemolestias.png?size=50x50&set=set1",
-  "price": 61,
-  "duration": "3h 4m",
-  "title": "Website Development With Python & Flask ",
-  "course_thumbnail": "https://static.skillshare.com/cdn-cgi/image/width=448,quality=85,format=auto/uploads/video/thumbnails/44be85115470027a44d25f6816f1fe7c/original"
+  "price": 36,
+  "duration": "1h 53m",
+  "title": "Illustration Practice: Lettering & Florals With Adobe Fresco",
+  "course_thumbnail": "https://static.skillshare.com/cdn-cgi/image/width=448,quality=85,format=auto/uploads/video/thumbnails/9b9898a196a35d1d940bd26aefe626e5/original"
 }, {
   "id": 2,
   "instructor": "Rhea Bellhouse",
@@ -25,18 +25,18 @@ const courseInfo = [{
   "id": 3,
   "instructor": "Svend Bussetti",
   "instructor_photo": "https://robohash.org/nihiletveniam.png?size=50x50&set=set1",
-  "price": 57,
-  "duration": "2h 30m",
-  "title": "Unity 2D Game Development Course",
-  "course_thumbnail": "https://static.skillshare.com/cdn-cgi/image/width=448,quality=85,format=auto/uploads/video/thumbnails/02688fc554cab1a4e6e6de54f622e774/original"
+  "price": 52,
+  "duration": "47m",
+  "title": "Illustrator Basics: The Pen & Pencil Tools",
+  "course_thumbnail": "https://static.skillshare.com/cdn-cgi/image/width=448,quality=85,format=auto/uploads/video/thumbnails/a74aa39f36b60b2468c656eb8830b437/original"
 }, {
   "id": 4,
   "instructor": "Ludovico Artin",
   "instructor_photo": "https://robohash.org/sedautsuscipit.png?size=50x50&set=set1",
   "price": 69,
-  "duration": "5h 3m",
-  "title": "Python Flask for Beginners - CRUD",
-  "course_thumbnail": "https://static.skillshare.com/cdn-cgi/image/width=448,quality=85,format=auto/uploads/video/thumbnails/44be85115470027a44d25f6816f1fe7c/original"
+  "duration": "60m",
+  "title": "Simple Character Animation",
+  "course_thumbnail": "https://static.skillshare.com/cdn-cgi/image/width=448,quality=85,format=auto/uploads/video/thumbnails/3756730827001/original"
 }, {
   "id": 5,
   "instructor": "Valentine Casterton",
