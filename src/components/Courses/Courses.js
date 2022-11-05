@@ -7,10 +7,12 @@ import "./Courses.css";
 function Courses({ courseList }) {
   const [cart, setCart] = useState([]);
   // Add cart function
-  const addToCart = (course) => {
+  const addToCart = (course, in_cart) => {
     // const newCart = 
     setCart([...cart, course]);
-    console.log("Course added ", course);
+    in_cart = !in_cart;
+
+    console.log("Course added ", course, in_cart);
   };
   return (
     <div className="container">

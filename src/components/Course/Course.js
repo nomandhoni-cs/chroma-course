@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import Button from "../Button/Button";
 import "./Course.css";
-import { BsCartPlusFill } from "react-icons/bs"
+// import { BsCartPlusFill } from "react-icons/bs"
 
 export const Course = (props) => {
+  const [addCartBtn, setAddCartBtn] = useState(true);
+  const stateChange = () => {
+    setAddCartBtn(!addCartBtn);
+  };
   const {
     duration,
     price,
@@ -15,7 +19,7 @@ export const Course = (props) => {
   } = props.singleCourse;
   return (
     <Col xl={4}>
-      <div className="single-course" >
+      <div className="single-course">
         <img src={course_thumbnail} alt={title} />
         <div className="course-description">
           <h5>{title}</h5>
@@ -43,7 +47,18 @@ export const Course = (props) => {
             </Row>
           </div>
         </div>
-        <Button text='Add to Cart' styleClass='btn-warning' onClick={() => props.addToCart(props.singleCourse)} />
+        {addCartBtn === true ? (
+          <Button
+            text="Add to Cart"
+            styleClass="btn-warning"
+            onClick={() => {
+              props.addToCart(props.singleCourse, props.singleCourse.in_cart);
+              stateChange();
+            }}
+          />
+        ) : (
+          ""
+        )}
       </div>
     </Col>
   );
