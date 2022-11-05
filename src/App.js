@@ -5,6 +5,7 @@ import logo from "./logo.svg";
 import bannerImage from "./images/topGreenBanner.webp";
 import { Footer } from "./components/Footer/Footer";
 import Courses from "./components/Courses/Courses";
+import { useState } from "react";
 const courseInfo = [{
   "id": 1,
   "instructor": "Bartlet Keep",
