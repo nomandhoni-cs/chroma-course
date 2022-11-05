@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Row } from "react-bootstrap";
 import Button from "../Button/Button";
 import "./Course.css";
+import { BsCartPlusFill } from "react-icons/bs"
 
 export const Course = (props) => {
   const {

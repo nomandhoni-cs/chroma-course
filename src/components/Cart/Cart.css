@@ -1,4 +1,10 @@
-.cart-headding h3{
+.cart-headding h5{
     font-weight: 600;
-    border-bottom: 1px solid black;
+
+}
+.cart-headding{
+    border-bottom: 1px solid gray;
+}
+.total-price{
+    border-top: 1px solid gray;
 }
