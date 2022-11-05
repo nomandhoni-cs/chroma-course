@@ -1,5 +1,6 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
+import { Cart } from "../Cart/Cart";
 import { Course } from "../Course/Course";
 import './Courses.css'
 
@@ -26,7 +27,7 @@ function Courses({ courseList }) {
             </div>
             </Col>
             <Col xl={2} className='text-center'>
-                <h3>Your Cart</h3>
+                <Cart />
             </Col>
         </Row>
     </div>
