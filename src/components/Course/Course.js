@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import Button from "../Button/Button";
 import "./Course.css";
-// import { BsCartPlusFill } from "react-icons/bs"
+import { BsCartPlusFill, BsFillCartCheckFill} from "react-icons/bs"
 
 export const Course = (props) => {
   const [addCartBtn, setAddCartBtn] = useState(true);
@@ -35,30 +35,35 @@ export const Course = (props) => {
             <Row>
               <Col xl={6}>
                 <p>
-                  <small>Price: </small>${price}
+                  <small>Price: </small>
+                  <b>${price}</b>
                 </p>
               </Col>
               <Col xl={6}>
                 <p>
-                  <small>Duration: </small>
-                  {duration}
+                  <b>{duration}</b>
                 </p>
               </Col>
             </Row>
           </div>
+          <div className="add-cart-btn text-center">
+            {addCartBtn === true ? (
+              <Button
+                icon ={<BsCartPlusFill />}
+                text="Add to Cart"
+                onClick={() => {
+                  props.addToCart(
+                    props.singleCourse,
+                    props.singleCourse.in_cart
+                  );
+                  stateChange();
+                }}
+              />
+            ) : (
+              <Button icon={<BsFillCartCheckFill />} text="Added" />
+            )}
+          </div>
         </div>
-        {addCartBtn === true ? (
-          <Button
-            text="Add to Cart"
-            styleClass="btn-warning"
-            onClick={() => {
-              props.addToCart(props.singleCourse, props.singleCourse.in_cart);
-              stateChange();
-            }}
-          />
-        ) : (
-          ""
-        )}
       </div>
     </Col>
   );
