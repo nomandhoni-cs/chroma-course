@@ -1,13 +1,18 @@
 .banner-text{
-    margin: 3vw 0;
+    margin: 30px 0;
 }
 .banner-text h1{
-    font-size: 4.5vw;
+    font-size: 65px;
     font-weight: 600;
 }
 .banner-text h3{
-    font-size: 2vw;
+    font-size: 25px;
 }
-.highlitedWord{
+.highlited-word{
+    font-size: 75px;
     color: #04F06A;
+}
+
+.banner-text .btn{
+    padding: 8px 30px;
 }

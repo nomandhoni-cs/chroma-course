@@ -27,7 +27,7 @@ export const Cart = (props) => {
             <Col xl={6}><p>${totalPrice}</p></Col>
             </Row>
         </div>
-        <Button text='Checkout' styleClass='btn-warning' />
+        <Button text='Checkout' styleClass='btn-checkout' />
     </>
   )
 }
