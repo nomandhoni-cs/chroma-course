@@ -1,14 +1,28 @@
+footer{
+    background-color: black;
+}
+footer ul{
+    margin-top: 20px;
+}
 footer ul li{
     display: block;
+    padding: 3px;
 }
 footer ul li a{
     text-decoration: none;
-    color: #212529;
+    color: #04F06A;
 
+}
+footer h5{
+    color: #04F06A;
+}
+footer h5 a{
+    color: #04F06A;
 }
 .copyright{
     background-color: #04F06A;
+    padding: 10px;
 }
 .copyright h4{
-    padding: 0.6vw;
+    color: black;
 }

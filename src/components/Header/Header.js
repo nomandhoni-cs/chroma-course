@@ -11,13 +11,11 @@ export const Header = ({ logo }) => {
           <Container>
             <Row className='align-items-center text-center'>
               <Col xl={2}>
-                <ul>
                   <div className="logo">
                     <a href="/">
                       <img src={logo} alt="Website logo" />
                     </a>
                   </div>
-                </ul>
               </Col>
               <Col xl={7}>
                 <div className="main-menu text-center">
