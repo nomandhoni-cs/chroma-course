@@ -6,10 +6,11 @@ import "./Courses.css";
 
 function Courses({ courseList }) {
   const [cart, setCart] = useState([]);
+  const [unitPrice, setUnitPrice] = useState(0);
   // Add cart function
   const addToCart = (course, in_cart) => {
-    // const newCart = 
     setCart([...cart, course]);
+    setUnitPrice(course.price)
     in_cart = !in_cart;
 
     console.log("Course added ", course, in_cart);
@@ -29,7 +30,7 @@ function Courses({ courseList }) {
           </div>
         </Col>
         <Col xl={2} className="text-center">
-          <Cart cart={cart} />
+          <Cart cart={cart} unitPrice={unitPrice}/>
         </Col>
       </Row>
     </div>
