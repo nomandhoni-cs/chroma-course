@@ -8,6 +8,7 @@
   border-top: 1px solid gray;
 }
 .btn-checkout {
+  width: 100%;
   border: none;
   background-color: black;
   color: #04f06a;
