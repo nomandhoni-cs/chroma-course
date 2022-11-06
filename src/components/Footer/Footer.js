@@ -10,14 +10,14 @@ export const Footer = () => {
             <Row className='text-center'>
                 <Col xl={4}>
                     <ul>
-                        <li><a href="/">Facebook</a></li>
-                        <li><a href="/">Twitter</a></li>
-                        <li><a href="/">LinkedIn</a></li>
+                        <li><a href="/">About Us</a></li>
+                        <li><a href="/">Privacy</a></li>
+                        <li><a href="/">Sitemap</a></li>
                     </ul>
                 </Col>
                 <Col xl={4}>
                     <ul>
-                        <li><a href="/">Facebook</a></li>
+                        <li><a href="/">Terms and Policies</a></li>
                         <li><a href="/">Twitter</a></li>
                         <li><a href="/">LinkedIn</a></li>
                     </ul>
@@ -31,7 +31,7 @@ export const Footer = () => {
                 </Col>
             </Row>
             <div className='text-center'>
-            <h5>If you like my project give a <BsStarFill /> on <BsGithub /></h5>
+            <h5>If you like my project give a <BsStarFill /> on <a href="https://github.com/nomandhoni-cs/chroma-course"><BsGithub /></a></h5>
         </div>
         </Container>
         <section className='copyright text-center'><h4>Copyright {thisYear.getYear() + 1900}</h4></section>
