@@ -8,7 +8,6 @@ export const Cart = (props) => {
     const itemsInCart = props.cart;
     const totalPrice = itemsInCart.reduce((total, course) => total+ course.price, 0);
     const tax = parseFloat((totalPrice * 0.12).toFixed(2));
-
   return (
     <>
     <div className="cart-headding">
