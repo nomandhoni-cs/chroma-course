@@ -5,6 +5,7 @@ import logo from "./logo.svg";
 import bannerImage from "./images/topGreenBanner.webp";
 import { Footer } from "./components/Footer/Footer";
 import Courses from "./components/Courses/Courses";
+import Service from "./components/Service/Service";
 // import { useState } from "react";
 const courseInfo = [{
   "id": 1,
@@ -281,6 +282,7 @@ function App() {
     <div className="App">
       <Header logo={logo} />
       <Body courseList={courseInfo} halfBanner={bannerImage} />
+      <Service />
       <Courses courseList = {courseInfo} />
       <Footer />
     </div>
