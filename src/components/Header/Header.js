@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import "./Header.css";
 import Button from '../Button/Button.js'
+// import { Link } from "react-router-dom";
 
 export const Header = ({ logo }) => {
   return (
@@ -23,6 +24,7 @@ export const Header = ({ logo }) => {
                     <ul>
                       <li>
                         <a href="/programming">Programming</a>
+                        {/* <Link to="/programming">Programming</Link> */}
                       </li>
                       <li>
                         <a href="/crafts">Crafts</a>
