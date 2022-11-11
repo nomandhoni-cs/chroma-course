@@ -6,18 +6,22 @@ import { Footer } from "./components/Footer/Footer";
 import logo from "./logo.svg";
 import fakeData from "./Fakedata/fakeData";
 import bannerImage from "./images/topGreenBanner.webp";
+import backgroundImg from "./images/commingsoon.webp"
 import Courses from "./components/Courses/Courses";
 import Service from "./components/Service/Service";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Programming from "./components/Programming/Programming";
 import Crafts from "./components/Crafts/Crafts";
 import Design from "./components/Design/Design";
 
 function App() {
+  const giveAlert = () => {
+    alert('Comming Soon!');
+  }
   return (
-    <div className="App">
-      <Header logo={logo} />
-      <Router>
+    <>
+      <BrowserRouter>
+      <Header giveAlert = {giveAlert}logo={logo} />
         <Routes>
           <Route
             exact
@@ -28,13 +32,13 @@ function App() {
               <Courses courseList={fakeData} />,
             ]}
           />
-          <Route path="/programming" element={<Programming />} />
-          <Route path="/crafts" element={<Crafts />} />
-          <Route path="/design" element={<Design />} />
+          <Route path="programming" element={<Programming backgroundImg={backgroundImg}/>} />
+          <Route path="crafts" element={<Crafts backgroundImg={backgroundImg}/>} />
+          <Route path="design" element={<Design backgroundImg={backgroundImg}/>} />
         </Routes>
-      </Router>
       <Footer />
-    </div>
+      </BrowserRouter>
+    </>
   );
 }
 
