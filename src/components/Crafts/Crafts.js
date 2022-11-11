@@ -1,10 +1,16 @@
-import React from 'react'
 import { Container } from 'react-bootstrap'
+import ComingSoon from '../ComingSoon/ComingSoon'
 
-const Crafts = () => {
+const Crafts = ({backgroundImg}) => {
   return (
     <Container>
-        <h1>Crafts Coming Soon!</h1>
+    <Container>
+      <ComingSoon
+        pageName="Crafts"
+        backgroundImg={backgroundImg}
+        text="Coming Soon" highlitedWord="!"
+      />
+    </Container>
     </Container>
   )
 }
