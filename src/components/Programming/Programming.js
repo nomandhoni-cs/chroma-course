@@ -1,12 +1,16 @@
-import React from 'react'
-import { Container } from 'react-bootstrap'
+import { Container } from "react-bootstrap";
+import ComingSoon from "../ComingSoon/ComingSoon";
 
-const Programming = () => {
+const Programming = ({ backgroundImg }) => {
   return (
     <Container>
-        <h1>Programming Coming Soon</h1>
+      <ComingSoon
+        pageName="Programming"
+        backgroundImg={backgroundImg}
+        text="Coming Soon" highlitedWord="!"
+      />
     </Container>
-  )
-}
+  );
+};
 
-export default Programming
+export default Programming;
