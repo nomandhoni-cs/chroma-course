@@ -14,6 +14,7 @@ import Programming from "./components/Programming/Programming";
 import Crafts from "./components/Crafts/Crafts";
 import Design from "./components/Design/Design";
 import { useState } from "react";
+import Checkout from "./components/Checkout/Checkout";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -44,6 +45,7 @@ function App() {
               <Courses addToCart={addToCart} cart={cart} unitPrice={unitPrice} courseList={fakeData} />,
             ]}
           />
+          <Route path="checkout" element={<Checkout cart={cart} unitPrice={unitPrice}/>} />
           <Route path="programming" element={<Programming backgroundImg={backgroundImg}/>} />
           <Route path="crafts" element={<Crafts backgroundImg={backgroundImg}/>} />
           <Route path="design" element={<Design backgroundImg={backgroundImg}/>} />

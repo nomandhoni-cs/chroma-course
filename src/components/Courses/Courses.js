@@ -1,5 +1,4 @@
 import { Row, Col } from "react-bootstrap";
-import { Cart } from "../Cart/Cart";
 import { Course } from "../Course/Course";
 import "./Courses.css";
 
@@ -7,7 +6,7 @@ function Courses({ courseList, addToCart, unitPrice, cart }) {
   return (
     <div className="container">
       <Row>
-        <Col xl={10}>
+        <Col xl={12}>
           <div className="country-container">
             <Row>
               {
@@ -17,9 +16,6 @@ function Courses({ courseList, addToCart, unitPrice, cart }) {
               }
             </Row>
           </div>
-        </Col>
-        <Col xl={2} className="text-center">
-          <Cart cart={cart} unitPrice={unitPrice}/>
         </Col>
       </Row>
     </div>

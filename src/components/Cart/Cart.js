@@ -1,4 +1,3 @@
-import React from 'react'
 import { Row } from 'react-bootstrap'
 import Button from '../Button/Button';
 import './Cart.css'
@@ -11,7 +10,7 @@ export const Cart = (props) => {
     const total = (tax + totalPrice).toFixed(1);
   return (
     <>
-    <div className="cart-headding">
+    <div className="cart-heading text-center">
         <h5>Your Cart <BsCartPlusFill /></h5>
     </div>
         <Row>
@@ -36,7 +35,10 @@ export const Cart = (props) => {
             <div className="price"><p>: ${total}</p></div>
             </Row>
         </div>
+        <div className="checkout-btn text-center">
+
         <Button text='Checkout' styleClass='btn-checkout' />
+        </div>
     </>
   )
 }
