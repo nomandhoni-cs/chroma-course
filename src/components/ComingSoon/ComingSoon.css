@@ -1,26 +1,27 @@
-img{
-    height: 92%;
+img {
+  width: 100%;
 }
-.coming-soon{
-    height: 580px;
-    position: relative;
-    display: block;
+.coming-soon {
+  position: relative;
 }
-.top-text{
-    position: absolute;
-    top: 6%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.top-text {
+  position: absolute;
+  top: 6%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-.bottom-text{
-    position: absolute;
-    bottom: -2%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.bottom-text {
+  position: absolute;
+  bottom: -5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-.coming-soon h1{
-    font-weight: 900;
-    font-size: 4.5rem;
-    margin-bottom: 0;
-    color: #3e4263;
+.coming-soon h1 {
+  font-weight: 900;
+  font-size: 4.5vw;
+  margin-bottom: 0;
+  color: #3e4263;
+}
+.highlited-word{
+    font-size: 4.5vw;
 }

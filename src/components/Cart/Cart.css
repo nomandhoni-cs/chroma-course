@@ -1,20 +1,36 @@
-.cart-headding h5 {
+.cart-heading h5 {
   font-weight: 600;
 }
-.cart-headding{
+.cart-heading{
   border-bottom: 1px solid gray;
 }
 .total-price {
   border-top: 1px solid gray;
 }
 .btn-checkout {
-  width: 100%;
   border: none;
   background-color: black;
   color: #04f06a;
+  margin-bottom: 20px;
 }
 .btn-checkout:hover {
   border: 1px solid black;
   background-color: #04f06a;
   color: black;
+}
+.text{
+  margin: 5px 0;
+  width: 65%;
+  padding: 5px 10px;
+}
+.text p{
+  float: left;
+}
+.price{
+  padding: 5px 10px;
+  margin: 5px 0;
+  width: 35%;
+}
+.price p{
+  float: left;
 }
