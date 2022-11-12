@@ -1,20 +1,9 @@
-import React, { useState } from "react";
 import { Row, Col } from "react-bootstrap";
 import { Cart } from "../Cart/Cart";
 import { Course } from "../Course/Course";
 import "./Courses.css";
 
-function Courses({ courseList }) {
-  const [cart, setCart] = useState([]);
-  const [unitPrice, setUnitPrice] = useState(0);
-  // Add cart function
-  const addToCart = (course, in_cart) => {
-    setCart([...cart, course]);
-    setUnitPrice(course.price)
-    in_cart = !in_cart;
-
-    console.log("Course added ", course, in_cart);
-  };
+function Courses({ courseList, addToCart, unitPrice, cart }) {
   return (
     <div className="container">
       <Row>

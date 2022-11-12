@@ -13,15 +13,27 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Programming from "./components/Programming/Programming";
 import Crafts from "./components/Crafts/Crafts";
 import Design from "./components/Design/Design";
+import { useState } from "react";
 
 function App() {
+  const [cart, setCart] = useState([]);
+  const [unitPrice, setUnitPrice] = useState(0);
+
+  // Add cart function
+  const addToCart = (course, in_cart) => {
+    setCart([...cart, course]);
+    setUnitPrice(course.price)
+    in_cart = !in_cart;
+    console.log("Course added ", course, in_cart);
+  };
+
   const giveAlert = () => {
     alert('Comming Soon!');
   }
   return (
     <>
       <BrowserRouter>
-      <Header giveAlert = {giveAlert}logo={logo} />
+      <Header giveAlert = {giveAlert}logo={logo} cart={cart}/>
         <Routes>
           <Route
             exact
@@ -29,7 +41,7 @@ function App() {
             element={[
               <Body courseList={fakeData} halfBanner={bannerImage} />,
               <Service />,
-              <Courses courseList={fakeData} />,
+              <Courses addToCart={addToCart} cart={cart} unitPrice={unitPrice} courseList={fakeData} />,
             ]}
           />
           <Route path="programming" element={<Programming backgroundImg={backgroundImg}/>} />

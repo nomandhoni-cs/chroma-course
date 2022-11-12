@@ -2,8 +2,9 @@ import { Col, Container, Row } from "react-bootstrap";
 import "./Header.css";
 import Button from "../Button/Button.js";
 import { Link } from "react-router-dom";
+import { BsCartPlusFill } from "react-icons/bs"
 
-export const Header = ({ logo, giveAlert }) => {
+export const Header = ({ logo, giveAlert, cart }) => {
 
   return (
     <>
@@ -18,7 +19,7 @@ export const Header = ({ logo, giveAlert }) => {
                   </Link>
                 </div>
               </Col>
-              <Col xl={7}>
+              <Col xl={6}>
                 <div className="main-menu text-center">
                   <nav>
                     <ul>
@@ -34,6 +35,9 @@ export const Header = ({ logo, giveAlert }) => {
                     </ul>
                   </nav>
                 </div>
+              </Col>
+              <Col xl={1}>
+                <Link to='/checkout' className="btn"><BsCartPlusFill /> <p className="cart-count">{cart.length}</p></Link>
               </Col>
               <Col xl={3}>
                 <div className="login-btn">

@@ -18,3 +18,18 @@
   background-color: #04f06a;
   color: black;
 }
+.text{
+  width: 58%;
+}
+.text p{
+  /* line-height: 1; */
+/* padding: 0; */
+  /* font-size: 13px; */
+float: left;
+}
+.price{
+  width: 42%;
+}
+.price p{
+  float: left;
+}
