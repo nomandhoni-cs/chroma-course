@@ -1,3 +1,6 @@
+.navbar-collapse{
+    justify-content: flex-end!important;
+}
 .cart-count{
     color:#04F06A;
     display: inline;
@@ -24,7 +27,4 @@ ul li:hover a{
 .login-btn a{
     padding: 8px 20px;
     margin: 0 10px;
-}
-.navbar-collapse{
-    justify-content: flex-end!important;
 }
