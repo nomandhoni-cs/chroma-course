@@ -1,7 +1,7 @@
 import { Container } from "react-bootstrap";
 import "./Header.css";
 import Button from "../Button/Button.js";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { BsCartPlusFill } from "react-icons/bs";
 import Navbar from "react-bootstrap/Navbar";
 
@@ -24,13 +24,16 @@ export const Header = ({ logo, giveAlert, cart }) => {
               >
                 <ul>
                   <li>
-                    <Link to="/programming">Programming</Link>
+                    <NavLink to="/programming" style={({isActive})=> {
+                      return {color:isActive? '#04f06a': ''}}}>Programming</NavLink>
                   </li>
                   <li>
-                    <Link to="/crafts">Crafts</Link>
+                    <NavLink to="/crafts" style={({isActive})=> {
+                      return {color:isActive? '#04f06a': ''}}}>Crafts</NavLink>
                   </li>
                   <li>
-                    <Link to="/design">Design</Link>
+                    <NavLink to="/design" style={({isActive})=> {
+                      return {color:isActive? '#04f06a': ''}}}>Design</NavLink>
                   </li>
                 </ul>
               </Navbar.Collapse>
