@@ -8,13 +8,13 @@ import fakeData from "./Fakedata/fakeData";
 import bannerImage from "./images/topGreenBanner.webp";
 import backgroundImg from "./images/commingsoon.webp"
 import Courses from "./components/Courses/Courses";
-import Service from "./components/Service/Service";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Programming from "./components/Programming/Programming";
 import Crafts from "./components/Crafts/Crafts";
 import Design from "./components/Design/Design";
 import { useState } from "react";
 import Checkout from "./components/Checkout/Checkout";
+import WhyUs from "./components/WhyUs/WhyUs";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -41,7 +41,7 @@ function App() {
             path="/"
             element={[
               <Body courseList={fakeData} halfBanner={bannerImage} />,
-              <Service />,
+              <WhyUs />,
               <Courses addToCart={addToCart} cart={cart} unitPrice={unitPrice} courseList={fakeData} />,
             ]}
           />

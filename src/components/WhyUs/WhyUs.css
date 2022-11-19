@@ -1,0 +1,25 @@
+.why-us-card{
+    display: block;
+    display: flex;
+    justify-content: space-between;
+}
+.single-card{
+    width: 25%;
+    padding: 10px;
+}
+@media screen and (max-width: 450px) {
+    .why-us-card{
+        display: block;
+        flex-direction: row;
+    }
+    .single-card{
+        display: block;
+        width: 100%;
+        padding: 10px;
+    }
+}
+.single-card-icon svg{
+    height: 50px;
+    width: 50px;
+    color: #04f06a;
+}
