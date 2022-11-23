@@ -15,6 +15,7 @@ import Design from "./components/Design/Design";
 import { useState } from "react";
 import Checkout from "./components/Checkout/Checkout";
 import WhyUs from "./components/WhyUs/WhyUs";
+import Faq from "./components/Faq/Faq";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -43,6 +44,7 @@ function App() {
               <Body courseList={fakeData} halfBanner={bannerImage} />,
               <WhyUs />,
               <Courses addToCart={addToCart} cart={cart} unitPrice={unitPrice} courseList={fakeData} />,
+              <Faq />
             ]}
           />
           <Route path="checkout" element={<Checkout cart={cart} unitPrice={unitPrice}/>} />

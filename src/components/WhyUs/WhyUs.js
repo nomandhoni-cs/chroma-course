@@ -10,7 +10,7 @@ const WhyUs = () => {
         <div className="why-us-card text-center">
             <div className="single-card">
                 <div className="single-card-icon"><BsFillAwardFill /></div>
-                <h3 className="why-heading">Best Quality Course</h3>
+                <h3 className="why-heading">Quality Course</h3>
                 <p className="why-us-info">We offer best quality of courses you can ever imagine.</p>
             </div>
             <div className="single-card">
