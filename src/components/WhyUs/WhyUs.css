@@ -2,10 +2,18 @@
     display: block;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 30px;
 }
 .single-card{
-    width: 25%;
+    width: 24%;
+    column-gap: 5px;
+    margin: 10px 0;
+    box-shadow: 0 0 0 1px #dddfe2;
     padding: 10px;
+    border-radius: 8px;
+}
+.single-card:hover{
+    box-shadow: 0 1px 8px 5px #dddfe2;
 }
 @media screen and (max-width: 450px) {
     .why-us-card{
