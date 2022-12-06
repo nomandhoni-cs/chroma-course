@@ -5,6 +5,7 @@ import { GiCrafting } from 'react-icons/gi';
 import { AiOutlineFileDone } from 'react-icons/ai';
 import { Col, Container, Row } from 'react-bootstrap'
 import './Footer.css'
+import { NavLink } from 'react-router-dom';
 export const Footer = () => {
     const thisYear = new Date();
   return (
@@ -13,23 +14,32 @@ export const Footer = () => {
             <Row>
                 <Col xl={4}>
                     <ul>
-                        <li><a href="/"><BsInfoSquareFill /> About Us</a></li>
-                        <li><a href="/"><BsFileLockFill /> Privacy</a></li>
-                        <li><a href="/"><FaScroll /> Sitemap</a></li>
+                        <li><NavLink to="/about" style={({isActive})=> {
+                      return {color:isActive? '#04f06a': ''}}}><BsInfoSquareFill /> About</NavLink></li>
+                        <li><NavLink to="/privacy" style={({isActive})=> {
+                      return {color:isActive? '#04f06a': ''}}}><BsFileLockFill /> Privacy</NavLink></li>
+                        <li><NavLink to="/sitemap" style={({isActive})=> {
+                      return {color:isActive? '#04f06a': ''}}}><FaScroll /> Sitemap</NavLink></li>
                     </ul>
                 </Col>
                 <Col xl={4}>
                     <ul>
-                        <li><a href="/"><AiOutlineFileDone /> Terms and Policies</a></li>
-                        <li><a href="/"><GiCrafting /> Make Course</a></li>
-                        <li><a href="/"><BsBriefcaseFill /> Career</a></li>
+                        <li><NavLink to="/terms" style={({isActive})=> {
+                      return {color:isActive? '#04f06a': ''}}}><AiOutlineFileDone /> Terms and Policies</NavLink>
+                        </li>
+                        <li><NavLink to="/make-course" style={({isActive})=> {
+                      return {color:isActive? '#04f06a': ''}}}><GiCrafting /> Make Course</NavLink>
+                        </li>
+                        <li><NavLink to="/career" style={({isActive})=> {
+                      return {color:isActive? '#04f06a': ''}}}><BsBriefcaseFill /> Career</NavLink>
+                        </li>
                     </ul>
                 </Col>
                 <Col xl={4}>
                     <ul>
                         <li><a href="https://github.com/nomandhoni-cs/chroma-course" rel="noreferrer" target="_blank"><FaGithubSquare /> GitHub</a></li>
-                        <li><a href="/"><FaTwitterSquare /> Twitter</a></li>
-                        <li><a href="/"><FaLinkedin /> LinkedIn</a></li>
+                        <li><a href="https://twitter.com/nomandhoni"><FaTwitterSquare /> Twitter</a></li>
+                        <li><a href="https://linkedin.com/in/nomandhoni"><FaLinkedin /> LinkedIn</a></li>
                     </ul>
                 </Col>
             </Row>

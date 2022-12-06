@@ -28,12 +28,12 @@ export const Header = ({ logo, giveAlert, cart }) => {
                       return {color:isActive? '#04f06a': ''}}}>Programming</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/crafts" style={({isActive})=> {
-                      return {color:isActive? '#04f06a': ''}}}>Crafts</NavLink>
-                  </li>
-                  <li>
                     <NavLink to="/design" style={({isActive})=> {
                       return {color:isActive? '#04f06a': ''}}}>Design</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/crafts" style={({isActive})=> {
+                      return {color:isActive? '#04f06a': ''}}}>Crafts</NavLink>
                   </li>
                 </ul>
               </Navbar.Collapse>
