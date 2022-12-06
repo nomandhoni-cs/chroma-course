@@ -28,3 +28,11 @@ ul li:hover a{
     padding: 8px 20px;
     margin: 0 10px;
 }
+.avatar{
+    width: 42px;
+    height: 42px;
+    border-radius: 7px;
+    margin: 0 10px;
+    box-shadow: 0 0 0 1px #dddfe2;
+    border: 1px solid #04F06A;
+}
