@@ -3,7 +3,7 @@ import logo from "./logo.svg";
 import fakeData from "./Fakedata/fakeData";
 import bannerImage from "./images/topGreenBanner.webp";
 import backgroundImg from "./images/commingsoon.webp";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import { useState } from "react";
 import Checkout from "./components/Checkout/Checkout";
 import SharedLayout from "./components/SharedLayout/SharedLayout";
@@ -29,25 +29,28 @@ function App() {
     isSignedIn: false,
     name: "",
     email: "",
-    photo: ""
+    photo: "",
+    token: ""
   });
   // Login signup handler
-  const loginSignupHandler = () => {
+  // Used navigate for a better user experience
+  const loginSignupHandler = (navigate) => {
     signInWithPopup(auth, provider)
     .then((result) => {
       // This gives you a Google Access Token. You can use it to access the Google API.
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const token = credential.accessToken;
       // The signed-in user info.
-      const user = result.user;
+      const {displayName, email, photoURL} = result.user;
       const newLoggedInUser = {
         isSignedIn: true,
-        name: user.displayName,
-        email: user.email,
-        photo: user.photoURL
+        name: displayName,
+        email: email,
+        photo: photoURL,
+        token: token
       };
       setUser(newLoggedInUser)
-      console.log("User", user, token);
+      navigate(-1);
       // ...
     }).catch((error) => {
       // Handle Errors here.
@@ -71,7 +74,8 @@ const handleSignOut = () => {
       isSignedIn: false,
       name: "",
       email: "",
-      photo: ""
+      photo: "",
+      token: ""
     };
     setUser(signedOutUser);
   }).catch((error) => {
@@ -144,8 +148,8 @@ const handleSignOut = () => {
               path="crafts"
               element={<ComingSoonPage backgroundImg={backgroundImg} pageName={"Crafts"}/>}
             />
-            <Route path="login" element={<Login loginSignupHandler={loginSignupHandler} text={"Login"}/>}/>
-            <Route path="signup" element={<Login loginSignupHandler={loginSignupHandler} text={"Sign Up"}/>} />
+            <Route path="login"  element={<Login user={user} loginSignupHandler={loginSignupHandler} handleSignOut={handleSignOut} text={"Login"}/>}/>
+            <Route path="signup" element={<Login user={user} loginSignupHandler={loginSignupHandler} handleSignOut={handleSignOut} text={"Sign Up"}/>} />
             <Route
               path="about"
               element={<ComingSoonPage backgroundImg={backgroundImg} pageName={"About Us"}/>}

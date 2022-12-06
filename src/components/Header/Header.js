@@ -21,7 +21,7 @@ export const Header = ({ logo, cart, user, loginSignupHandler, handleSignOut }) 
     <>
       <img className="avatar" src={user.photo} alt={user.name}/>
       <NavLink className="btn filledBtn" onClick={handleSignOut}>
-        Logout
+        Sign Out
       </NavLink>
     </>
   );
