@@ -1,16 +1,19 @@
-import React, { useState } from "react";
+//import React, { useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import Button from "../Button/Button";
 import "./Course.css";
 import { BsCartPlusFill, BsFillCartCheckFill} from "react-icons/bs"
 
 export const Course = (props) => {
-  const [addCartBtn, setAddCartBtn] = useState(true);
-  const stateChange = () => {
-    setAddCartBtn(!addCartBtn);
-  };
+  //Previous method of checking if the course is in the cart
+
+  // const [addCartBtn, setAddCartBtn] = useState(true);
+  // const stateChange = () => {
+  //   setAddCartBtn(!addCartBtn);
+  // };
   const {
     duration,
+    in_cart,
     price,
     instructor_photo,
     title,
@@ -47,7 +50,7 @@ export const Course = (props) => {
             </Row>
           </div>
           <div className="add-cart-btn text-center">
-            {addCartBtn === true ? (
+            {in_cart === false? (
               <Button
                 icon ={<BsCartPlusFill />}
                 text="Add to Cart"
@@ -56,7 +59,7 @@ export const Course = (props) => {
                     props.singleCourse,
                     props.singleCourse.in_cart
                   );
-                  stateChange();
+                  // stateChange();
                 }}
               />
             ) : (
