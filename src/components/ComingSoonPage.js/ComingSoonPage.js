@@ -1,18 +1,16 @@
-import React from "react";
 import { Container } from "react-bootstrap";
 import ComingSoon from "../ComingSoon/ComingSoon";
 
-const Design = ({ backgroundImg }) => {
+const ComingSoonPage = ({ backgroundImg, pageName}) => {
   return (
     <Container>
       <ComingSoon
-        pageName="Design"
+        pageName={pageName}
         backgroundImg={backgroundImg}
-        text="Coming Soon"
-        highlitedWord="!"
+        text="Coming Soon" highlitedWord="!"
       />
     </Container>
   );
 };
 
-export default Design;
+export default ComingSoonPage;

@@ -11,8 +11,7 @@ function Courses({ courseList, addToCart, unitPrice, cart }) {
             <Row>
               {
                 courseList.map((singleCourse) =>
-                  <Course singleCourse={singleCourse} addToCart={addToCart} key={singleCourse.id}/>)
-                // console.log(singleCourse.id)
+                <Course singleCourse={singleCourse} addToCart={addToCart} key={singleCourse.id}/>)
               }
             </Row>
           </div>
