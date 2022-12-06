@@ -4,10 +4,10 @@ import { Header } from "../Header/Header"
 
 
 
-const SharedLayout = ({giveAlert, logo, cart}) => {
+const SharedLayout = ({giveAlert, logo, cart, user, loginSignupHandler, handleSignOut}) => {
   return (
     <>
-    <Header giveAlert = {giveAlert} logo={logo} cart={cart}/>
+    <Header loginSignupHandler={loginSignupHandler} handleSignOut ={ handleSignOut } user={user} giveAlert = {giveAlert} logo={logo} cart={cart}/>
     <Outlet />
     <Footer />
     </>

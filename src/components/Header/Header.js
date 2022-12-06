@@ -1,11 +1,30 @@
 import { Container } from "react-bootstrap";
 import "./Header.css";
-import Button from "../Button/Button.js";
 import { Link, NavLink } from "react-router-dom";
 import { BsCartPlusFill } from "react-icons/bs";
 import Navbar from "react-bootstrap/Navbar";
 
-export const Header = ({ logo, giveAlert, cart }) => {
+export const Header = ({ logo, cart, user, loginSignupHandler, handleSignOut }) => {
+  // Login and Signup button
+  const loginSignup = (
+    <>
+      <NavLink to="/login" className="btn normalBtn">
+        Login
+      </NavLink>
+      <NavLink to="/signup" className="btn filledBtn" >
+        Sign Up
+      </NavLink>
+    </>
+  );
+  // Logout button and avatar
+  const logoutAndAvatar = (
+    <>
+      <img className="avatar" src={user.photo} alt={user.name}/>
+      <NavLink className="btn filledBtn" onClick={handleSignOut}>
+        Logout
+      </NavLink>
+    </>
+  );
   return (
     <>
       <header>
@@ -24,16 +43,34 @@ export const Header = ({ logo, giveAlert, cart }) => {
               >
                 <ul>
                   <li>
-                    <NavLink to="/programming" style={({isActive})=> {
-                      return {color:isActive? '#04f06a': ''}}}>Programming</NavLink>
+                    <NavLink
+                      to="/programming"
+                      style={({ isActive }) => {
+                        return { color: isActive ? "#04f06a" : "" };
+                      }}
+                    >
+                      Programming
+                    </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/design" style={({isActive})=> {
-                      return {color:isActive? '#04f06a': ''}}}>Design</NavLink>
+                    <NavLink
+                      to="/design"
+                      style={({ isActive }) => {
+                        return { color: isActive ? "#04f06a" : "" };
+                      }}
+                    >
+                      Design
+                    </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/crafts" style={({isActive})=> {
-                      return {color:isActive? '#04f06a': ''}}}>Crafts</NavLink>
+                    <NavLink
+                      to="/crafts"
+                      style={({ isActive }) => {
+                        return { color: isActive ? "#04f06a" : "" };
+                      }}
+                    >
+                      Crafts
+                    </NavLink>
                   </li>
                 </ul>
               </Navbar.Collapse>
@@ -46,16 +83,7 @@ export const Header = ({ logo, giveAlert, cart }) => {
                 id="basic-navbar-nav"
                 className="main-menu me-auto navbar-nav login-btn f-right"
               >
-                <Button
-                  text={"Log In"}
-                  onClick={giveAlert}
-                  styleClass={"normalBtn"}
-                />
-                <Button
-                  onClick={giveAlert}
-                  text={"Sign Up"}
-                  styleClass={"filledBtn"}
-                />
+                {user.isSignedIn ? logoutAndAvatar : loginSignup}
               </Navbar.Collapse>
             </Container>
           </Navbar>
