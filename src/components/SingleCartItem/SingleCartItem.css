@@ -1,0 +1,24 @@
+.single-cart-item-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+.course-image img {
+    width: 100px;
+    border-radius: 7px;
+}
+
+.image-and-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly
+}
+
+.price-and-remove-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly
+}
