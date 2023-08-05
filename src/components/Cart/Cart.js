@@ -2,6 +2,7 @@ import { Row } from 'react-bootstrap'
 import Button from '../Button/Button';
 import './Cart.css'
 import { BsCartPlusFill } from "react-icons/bs"
+import SingleCartItem from '../SingleCartItem/SingleCartItem';
 
 export const Cart = (props) => {
     const itemsInCart = props.cart;
@@ -21,6 +22,9 @@ export const Cart = (props) => {
             <div className="text"><p>Unit Price</p></div>
             <div className="price"><p>: ${props.unitPrice}</p></div>
         </Row>
+        {
+            itemsInCart.map((singleItem) => <SingleCartItem singleItem={singleItem}/>)
+        }
         <Row>
             <div className="text"><p>Tax</p></div>
             <div className="price"><p>: ${tax}</p></div>
