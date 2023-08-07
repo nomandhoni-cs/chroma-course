@@ -21,7 +21,7 @@ const SingleCartItem = (props) => {
                     <span id="price-text">Price:$ {price}</span>
                 </div>
                 <div className="course-remove">
-                    <button onClick={() => props.removeItem(props.singleItem)}>
+                    <button onClick={() => props.removeFromCart(props.singleItem)}>
                         <BsTrash />
                         <span id="remove-btn-text">
                             Remove

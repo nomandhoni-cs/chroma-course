@@ -1,4 +1,3 @@
-// import { Row, Col } from 'react-bootstrap'
 import Button from '../Button/Button';
 import './Cart.css'
 import { BsCartPlusFill } from "react-icons/bs"
@@ -19,7 +18,7 @@ export const Cart = (props) => {
                 <div className="total-items right-aligned"><p>: {props.cart.length}</p></div>
             </div >
             {
-                itemsInCart.map((singleItem) => <SingleCartItem key={singleItem.id} singleItem={singleItem} />)
+                itemsInCart.map((singleItem) => <SingleCartItem key={singleItem.id} singleItem={singleItem} removeFromCart={props.removeFromCart} />)
             }
             <div className="cart-info">
                 <div className="text left-aligned"><p>Tax</p></div>
