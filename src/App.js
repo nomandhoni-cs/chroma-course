@@ -105,7 +105,8 @@ function App() {
   // Remove cart function
   const removeFromCart = (course) => {
     setCart(cart.filter((singleCourse) => singleCourse.id !== course.id));
-    // console.log("Course", ifCourseExist, fakeData)
+    // Add in_cart property to the course object
+    fakeData.find((singleCourse) => singleCourse.id === course.id).in_cart = false;
     console.log("Course removed ", course);
   };
 
