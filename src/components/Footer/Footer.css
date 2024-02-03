@@ -2,11 +2,11 @@ footer{
     background-color: black;
 }
 footer ul{
-    margin-top: 20px;
+    margin-top: 24px;
 }
 footer ul li{
     display: block;
-    padding: 3px;
+    padding: 8px;
 }
 footer ul li a{
     text-decoration: none;
@@ -21,7 +21,7 @@ footer h5 a{
 }
 .copyright{
     background-color: #04F06A;
-    padding: 10px;
+    padding: 8px;
 }
 .copyright h4{
     color: black;

@@ -3,7 +3,7 @@
 }
 .cart-heading{
   border-bottom: 1px solid gray;
-  margin-bottom: 7px;
+  margin-bottom: 8x;
 }
 .total-price {
   border-top: 1px solid gray;
@@ -12,7 +12,7 @@
   border: none;
   background-color: black;
   color: #04f06a;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 .btn-checkout:hover {
   border: 1px solid black;
@@ -20,7 +20,7 @@
   color: black;
 }
 .cart-info {
-  padding: 0 15px;
+  padding: 0 16px;
   display: flex;
   justify-content: space-between;
 }
