@@ -11,12 +11,12 @@
 .btn-checkout {
   border: none;
   background-color: black;
-  color: #04f06a;
+  color: #FE4C55;
   margin-bottom: 24px;
 }
 .btn-checkout:hover {
   border: 1px solid black;
-  background-color: #04f06a;
+  background-color: #FE4C55;
   color: black;
 }
 .cart-info {

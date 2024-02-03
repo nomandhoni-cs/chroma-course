@@ -1,18 +1,18 @@
 .normalBtn{
-    border: 1px solid #04F06A;
+    border: 1px solid #FE4C55;
     font-weight: 600;
     color: black;
 }
 .normalBtn:hover{
-    background: #04F06A;
+    background: #FE4C55;
     color: #ffffff;
 }
 .filledBtn{
-    background: #04F06A;
+    background: #FE4C55;
     color: #ffffff;
     font-weight: 600;
 }
 .filledBtn:hover{
-    border: 1px solid #04F06A;
+    border: 1px solid #FE4C55;
     background-color: #ffffff;
 }
