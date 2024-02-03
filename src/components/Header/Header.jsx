@@ -4,14 +4,20 @@ import { Link, NavLink } from "react-router-dom";
 import { BsCartPlusFill } from "react-icons/bs";
 import Navbar from "react-bootstrap/Navbar";
 
-export const Header = ({ logo, cart, user, loginSignupHandler, handleSignOut }) => {
+export const Header = ({
+  logo,
+  cart,
+  user,
+  loginSignupHandler,
+  handleSignOut,
+}) => {
   // Login and Signup button
   const loginSignup = (
     <>
       <NavLink to="/login" className="btn normalBtn">
         Login
       </NavLink>
-      <NavLink to="/signup" className="btn filledBtn" >
+      <NavLink to="/signup" className="btn filledBtn">
         Sign Up
       </NavLink>
     </>
@@ -19,7 +25,7 @@ export const Header = ({ logo, cart, user, loginSignupHandler, handleSignOut }) 
   // Logout button and avatar
   const logoutAndAvatar = (
     <>
-      <img className="avatar" src={user.photo} alt={user.name}/>
+      <img className="avatar" src={user.photo} alt={user.name} />
       <NavLink className="btn filledBtn" onClick={handleSignOut}>
         Sign Out
       </NavLink>
@@ -46,7 +52,7 @@ export const Header = ({ logo, cart, user, loginSignupHandler, handleSignOut }) 
                     <NavLink
                       to="/programming"
                       style={({ isActive }) => {
-                        return { color: isActive ? "#04f06a" : "" };
+                        return { color: isActive ? "#FE4C55" : "" };
                       }}
                     >
                       Programming
@@ -56,7 +62,7 @@ export const Header = ({ logo, cart, user, loginSignupHandler, handleSignOut }) 
                     <NavLink
                       to="/design"
                       style={({ isActive }) => {
-                        return { color: isActive ? "#04f06a" : "" };
+                        return { color: isActive ? "#FE4C55" : "" };
                       }}
                     >
                       Design
@@ -66,7 +72,7 @@ export const Header = ({ logo, cart, user, loginSignupHandler, handleSignOut }) 
                     <NavLink
                       to="/crafts"
                       style={({ isActive }) => {
-                        return { color: isActive ? "#04f06a" : "" };
+                        return { color: isActive ? "#FE4C55" : "" };
                       }}
                     >
                       Crafts

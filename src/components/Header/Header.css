@@ -2,37 +2,35 @@
     justify-content: flex-end!important;
 }
 .cart-count{
-    color:#04F06A;
+    color:#FE4C55;
     display: inline;
-    font-size: 18px;
 }
 .main-menu ul li{
     display: inline-block;
     margin-top: 15px;
 }
 .main-menu ul li a{
-    font-family: 'poppins';
     font-size: 18px;
     font-weight: 600;
     text-decoration: none;
     text-transform: capitalize;
     color: black;
     display: block;
-    padding: 15px 0;
-    margin: 0 15px;
+    padding: 16px 0;
+    margin: 0 16px;
 }
 ul li:hover a{
-    color: #04F06A;
+    color: #FE4C55;
 }
 .login-btn a{
-    padding: 8px 20px;
+    padding: 8px 24px;
     margin: 0 10px;
 }
 .avatar{
     width: 42px;
     height: 42px;
-    border-radius: 7px;
+    border-radius: 8px;
     margin: 0 10px;
     box-shadow: 0 0 0 1px #dddfe2;
-    border: 1px solid #04F06A;
+    border: 1px solid #FE4C55;
 }

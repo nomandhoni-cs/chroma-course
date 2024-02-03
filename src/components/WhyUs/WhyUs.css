@@ -2,14 +2,14 @@
     display: block;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-bottom: 32px;
 }
 .single-card{
     width: 24%;
     column-gap: 5px;
-    margin: 10px 0;
+    margin: 8px 0;
     box-shadow: 0 0 0 1px #dddfe2;
-    padding: 10px;
+    padding: 8px;
     border-radius: 8px;
 }
 .single-card:hover{
@@ -23,11 +23,11 @@
     .single-card{
         display: block;
         width: 100%;
-        padding: 10px;
+        padding: 8px;
     }
 }
 .single-card-icon svg{
     height: 50px;
     width: 50px;
-    color: #04f06a;
+    color: #FE4C55;
 }

@@ -1,16 +1,45 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Poppins','Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Google Sans Text', sans-serif;
+  font-size: 18px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1 {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 3.815rem;
 }
-.active{
-  color: #04f06a;
+
+h2 {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 3.052rem;
+}
+
+h3 {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 2.441rem;
+}
+
+h4 {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 1.953rem;
+}
+
+h5 {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 1.563rem;
+}
+
+h6 {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 1.25rem;
+}
+
+code {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.active {
+  color: #FE4C55;
 }

@@ -2,26 +2,26 @@ footer{
     background-color: black;
 }
 footer ul{
-    margin-top: 20px;
+    margin-top: 24px;
 }
 footer ul li{
     display: block;
-    padding: 3px;
+    padding: 8px;
 }
 footer ul li a{
     text-decoration: none;
-    color: #04F06A;
+    color: #FE4C55;
 
 }
 footer h5{
-    color: #04F06A;
+    color: #FE4C55;
 }
 footer h5 a{
-    color: #04F06A;
+    color: #FE4C55;
 }
 .copyright{
-    background-color: #04F06A;
-    padding: 10px;
+    background-color: #FE4C55;
+    padding: 8px;
 }
 .copyright h4{
     color: black;
