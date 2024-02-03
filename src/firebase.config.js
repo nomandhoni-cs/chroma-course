@@ -3,6 +3,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
+console.log(import.meta.env.VITE_REACT_APP_AUTH_DOMAIN);
 export const firebaseConfig = {
   apiKey: `${import.meta.env.VITE_REACT_APP_API_KEY}`,
   authDomain: `${import.meta.env.VITE_REACT_APP_AUTH_DOMAIN}`,
