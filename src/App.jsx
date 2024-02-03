@@ -12,11 +12,16 @@ import CatagoryWiseProduct from "./components/CatagoryWiseProduct/CatagoryWisePr
 import ComingSoonPage from "./components/ComingSoonPage.js/ComingSoonPage";
 import Login from "./components/Login/Login";
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  signOut,
+} from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
 import { firebaseConfig } from "./firebase.config";
 
-const app = initializeApp(firebaseConfig)
+const app = initializeApp(firebaseConfig);
 getAnalytics(app);
 function App() {
   const provider = new GoogleAuthProvider();
@@ -30,7 +35,7 @@ function App() {
     name: "",
     email: "",
     photo: "",
-    token: ""
+    token: "",
   });
   // Login signup handler
   // Used navigate for a better user experience
@@ -47,12 +52,13 @@ function App() {
           name: displayName,
           email: email,
           photo: photoURL,
-          token: token
+          token: token,
         };
-        setUser(newLoggedInUser)
+        setUser(newLoggedInUser);
         navigate(-1);
         // ...
-      }).catch((error) => {
+      })
+      .catch((error) => {
         // Handle Errors here.
         const errorCode = error.code;
         const errorMessage = error.message;
@@ -63,38 +69,43 @@ function App() {
         console.log("Error", errorCode, errorMessage, email, credential);
         // ...
       });
-  }
+  };
 
   // Handle SIgn out
   const handleSignOut = () => {
     const auth = getAuth();
-    signOut(auth).then(() => {
-      // Sign-out successful.
-      const signedOutUser = {
-        isSignedIn: false,
-        name: "",
-        email: "",
-        photo: "",
-        token: ""
-      };
-      setUser(signedOutUser);
-    }).catch((error) => {
-      // An error happened.
-      console.log("Error", error);
-    });
-  }
-
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful.
+        const signedOutUser = {
+          isSignedIn: false,
+          name: "",
+          email: "",
+          photo: "",
+          token: "",
+        };
+        setUser(signedOutUser);
+      })
+      .catch((error) => {
+        // An error happened.
+        console.log("Error", error);
+      });
+  };
 
   // Add cart function
   const addToCart = (course, in_cart) => {
     //Check if the course is already in the cart
-    const ifCourseExist = cart.find((singleCourse) => singleCourse.id === course.id);
+    const ifCourseExist = cart.find(
+      (singleCourse) => singleCourse.id === course.id
+    );
     if (ifCourseExist) {
       alert("Course already added to cart");
     } else {
       const currentProductId = course.id;
       // Add in_cart property to the course object
-      fakeData.find((singleCourse) => singleCourse.id === currentProductId).in_cart = true;
+      fakeData.find(
+        (singleCourse) => singleCourse.id === currentProductId
+      ).in_cart = true;
       setCart([...cart, course]);
       setUnitPrice(course.price);
       in_cart = !in_cart;
@@ -106,7 +117,9 @@ function App() {
   const removeFromCart = (course) => {
     setCart(cart.filter((singleCourse) => singleCourse.id !== course.id));
     // Add in_cart property to the course object
-    fakeData.find((singleCourse) => singleCourse.id === course.id).in_cart = false;
+    fakeData.find(
+      (singleCourse) => singleCourse.id === course.id
+    ).in_cart = false;
     console.log("Course removed ", course);
   };
 
@@ -120,7 +133,14 @@ function App() {
           <Route
             path="/"
             element={
-              <SharedLayout loginSignupHandler={loginSignupHandler} handleSignOut={handleSignOut} user={user} giveAlert={giveAlert} logo={logo} cart={cart} />
+              <SharedLayout
+                loginSignupHandler={loginSignupHandler}
+                handleSignOut={handleSignOut}
+                user={user}
+                giveAlert={giveAlert}
+                logo={logo}
+                cart={cart}
+              />
             }
           >
             <Route
@@ -137,49 +157,122 @@ function App() {
             />
             <Route
               path="checkout"
-              element={<Checkout cart={cart} removeFromCart={removeFromCart} unitPrice={unitPrice} />}
+              element={
+                <Checkout
+                  cart={cart}
+                  removeFromCart={removeFromCart}
+                  unitPrice={unitPrice}
+                />
+              }
             />
             <Route
               path="programming"
-              element={<CatagoryWiseProduct fakeData={fakeData} type={"programming"} addToCart={addToCart}
-                cart={cart}
-                unitPrice={unitPrice} />}
+              element={
+                <CatagoryWiseProduct
+                  fakeData={fakeData}
+                  type={"programming"}
+                  addToCart={addToCart}
+                  cart={cart}
+                  unitPrice={unitPrice}
+                />
+              }
             />
             <Route
               path="design"
-              element={<CatagoryWiseProduct fakeData={fakeData} type={"design"} addToCart={addToCart}
-                cart={cart}
-                unitPrice={unitPrice} />}
+              element={
+                <CatagoryWiseProduct
+                  fakeData={fakeData}
+                  type={"design"}
+                  addToCart={addToCart}
+                  cart={cart}
+                  unitPrice={unitPrice}
+                />
+              }
             />
             <Route
               path="crafts"
-              element={<ComingSoonPage backgroundImg={backgroundImg} pageName={"Crafts"} />}
+              element={
+                <ComingSoonPage
+                  backgroundImg={backgroundImg}
+                  pageName={"Crafts"}
+                />
+              }
             />
-            <Route path="login" element={<Login user={user} loginSignupHandler={loginSignupHandler} handleSignOut={handleSignOut} text={"Login"} />} />
-            <Route path="signup" element={<Login user={user} loginSignupHandler={loginSignupHandler} handleSignOut={handleSignOut} text={"Sign Up"} />} />
+            <Route
+              path="login"
+              element={
+                <Login
+                  user={user}
+                  loginSignupHandler={loginSignupHandler}
+                  handleSignOut={handleSignOut}
+                  text={"Login"}
+                />
+              }
+            />
+            <Route
+              path="signup"
+              element={
+                <Login
+                  user={user}
+                  loginSignupHandler={loginSignupHandler}
+                  handleSignOut={handleSignOut}
+                  text={"Sign Up"}
+                />
+              }
+            />
             <Route
               path="about"
-              element={<ComingSoonPage backgroundImg={backgroundImg} pageName={"About Us"} />}
+              element={
+                <ComingSoonPage
+                  backgroundImg={backgroundImg}
+                  pageName={"About Us"}
+                />
+              }
             />
             <Route
               path="privacy"
-              element={<ComingSoonPage backgroundImg={backgroundImg} pageName={"Privacy"} />}
+              element={
+                <ComingSoonPage
+                  backgroundImg={backgroundImg}
+                  pageName={"Privacy"}
+                />
+              }
             />
             <Route
               path="sitemap"
-              element={<ComingSoonPage backgroundImg={backgroundImg} pageName={"Sitemap"} />}
+              element={
+                <ComingSoonPage
+                  backgroundImg={backgroundImg}
+                  pageName={"Sitemap"}
+                />
+              }
             />
             <Route
               path="terms"
-              element={<ComingSoonPage backgroundImg={backgroundImg} pageName={"Terms and Policies"} />}
+              element={
+                <ComingSoonPage
+                  backgroundImg={backgroundImg}
+                  pageName={"Terms and Policies"}
+                />
+              }
             />
             <Route
               path="make-course"
-              element={<ComingSoonPage backgroundImg={backgroundImg} pageName={"Make Course"} />}
+              element={
+                <ComingSoonPage
+                  backgroundImg={backgroundImg}
+                  pageName={"Make Course"}
+                />
+              }
             />
             <Route
               path="career"
-              element={<ComingSoonPage backgroundImg={backgroundImg} pageName={"Career"} />}
+              element={
+                <ComingSoonPage
+                  backgroundImg={backgroundImg}
+                  pageName={"Career"}
+                />
+              }
             />
           </Route>
         </Routes>
