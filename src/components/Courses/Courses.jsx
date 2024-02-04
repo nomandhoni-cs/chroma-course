@@ -1,22 +1,18 @@
-import { Row, Col } from "react-bootstrap";
-import { Course } from "../Course/Course";
-import "./Courses.css";
+// Courses.jsx
+import Course from "../Course/Course";
 
-function Courses({ courseList, addToCart, unitPrice, cart }) {
+function Courses({ courseList, addToCart }) {
   return (
-    <div className="container">
-      <Row>
-        <Col xl={12}>
-          <div className="country-container">
-            <Row>
-              {
-                courseList.map((singleCourse) =>
-                <Course singleCourse={singleCourse} addToCart={addToCart} key={singleCourse.id}/>)
-              }
-            </Row>
-          </div>
-        </Col>
-      </Row>
+    <div className="courses-section dark:bg-dark-secondary py-10">
+      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        {courseList.map((singleCourse) => (
+          <Course
+            key={singleCourse.id}
+            singleCourse={singleCourse}
+            addToCart={addToCart}
+          />
+        ))}
+      </div>
     </div>
   );
 }

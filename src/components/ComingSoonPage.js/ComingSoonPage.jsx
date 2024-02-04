@@ -1,15 +1,15 @@
-import { Container } from "react-bootstrap";
 import ComingSoon from "../ComingSoon/ComingSoon";
 
-const ComingSoonPage = ({ backgroundImg, pageName}) => {
+const ComingSoonPage = ({ backgroundImg, pageName }) => {
   return (
-    <Container>
+    <div className="container mx-auto">
       <ComingSoon
         pageName={pageName}
         backgroundImg={backgroundImg}
-        text="Coming Soon" highlitedWord="!"
+        text="Coming Soon"
+        highlitedWord="!"
       />
-    </Container>
+    </div>
   );
 };
 
