@@ -1,14 +1,13 @@
-import { Container } from "react-bootstrap"
-import { Cart } from "../Cart/Cart"
-
+import React from "react";
+import { Cart } from "../Cart/Cart";
 
 const Checkout = ({ cart, removeFromCart, unitPrice }) => {
   console.log("Cart", cart);
   return (
-    <Container>
+    <div className="container mx-auto">
       <Cart cart={cart} removeFromCart={removeFromCart} unitPrice={unitPrice} />
-    </Container>
-  )
-}
+    </div>
+  );
+};
 
-export default Checkout
+export default Checkout;
