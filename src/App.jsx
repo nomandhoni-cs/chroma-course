@@ -152,6 +152,7 @@ function App() {
                   addToCart={addToCart}
                   cart={cart}
                   unitPrice={unitPrice}
+                  className="bg-light-secondary dark:bg-dark-secondary"
                 />
               }
             />

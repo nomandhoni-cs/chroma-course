@@ -1,63 +1,56 @@
-import { Container } from "react-bootstrap";
-import "./WhyUs.css";
-import { BsFillAwardFill } from "react-icons/bs";
-import { GiTakeMyMoney } from "react-icons/gi";
-import { RiRoadMapFill } from "react-icons/ri";
-import { MdPayments } from "react-icons/md";
+import React from "react";
+import {
+  BsFillAwardFill,
+  GiTakeMyMoney,
+  RiRoadMapFill,
+  MdPayments,
+} from "react-icons/all";
+
 const WhyUs = () => {
+  const whyUsData = [
+    {
+      icon: <BsFillAwardFill />,
+      heading: "Quality Course",
+      info: "We offer the best quality of courses you can ever imagine.",
+    },
+    {
+      icon: <GiTakeMyMoney />,
+      heading: "Reasonable Price",
+      info: "We offer all our courses at a reasonable price.",
+    },
+    {
+      icon: <MdPayments />,
+      heading: "Pay Once",
+      info: "Pay one time and forget about billing, get access for a lifetime.",
+    },
+    {
+      icon: <RiRoadMapFill />,
+      heading: "Complete Guide",
+      info: "We will guide you through the complete roadmap.",
+    },
+  ];
+
   return (
-    <Container>
-      <div className="why-us-card text-center">
-        <div className="single-card">
-          <div className="single-card-icon">
-            <BsFillAwardFill />
-          </div>
-          <h3 className="why-heading">Quality Course</h3>
-          <p className="why-us-info">
-            We offer best quality of courses you can ever imagine.
-          </p>
-        </div>
-        <div className="single-card">
-          <div className="single-card-icon">
-            <GiTakeMyMoney />
-          </div>
-          <h3 className="why-heading">Reasonable Price</h3>
-          <p className="why-us-info">
-            We offer our all course at a reasonable price.
-          </p>
-        </div>
-        <div className="single-card">
-          <div className="single-card-icon">
-            <MdPayments />
-          </div>
-          <h3 className="why-heading">Pay Once</h3>
-          <p className="why-us-info">
-            Pay onetime and forget about billing, get access lifetime.
-          </p>
-        </div>
-        <div className="single-card">
-          <div className="single-card-icon">
-            <RiRoadMapFill />
-          </div>
-          <h3 className="why-heading">Complete Guide</h3>
-          <p className="why-us-info">
-            We will guide you through complete roadmap.
-          </p>
+    <div className="py-10 dark:bg-dark-secondary">
+      <div className="container mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-2 text-center">
+          {whyUsData.map((data, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center bg-white dark:bg-dark-tertiary p-6 rounded-lg shadow-md"
+            >
+              <div className="text-4xl text-light-primary dark:text-dark-primary mb-4">
+                {data.icon}
+              </div>
+              <h3 className="text-lg font-semibold mb-2 text-gray-800 dark:text-white">
+                {data.heading}
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300">{data.info}</p>
+            </div>
+          ))}
         </div>
       </div>
-    </Container>
-    // <Card style={{ width: '18rem' }}>
-    //   <Card.Body>
-    //     <Card.Title>Card Title</Card.Title>
-    //     <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-    //     <Card.Text>
-    //       Some quick example text to build on the card title and make up the
-    //       bulk of the card's content.
-    //     </Card.Text>
-    //     <Card.Link href="#">Card Link</Card.Link>
-    //     <Card.Link href="#">Another Link</Card.Link>
-    //   </Card.Body>
-    // </Card>
+    </div>
   );
 };
 

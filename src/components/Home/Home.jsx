@@ -15,7 +15,7 @@ const Home = ({ fakeData, bannerImage, addToCart, cart, unitPrice }) => {
       />
       <Faq />
     </>
-  )
+  );
 };
 
 export default Home;
