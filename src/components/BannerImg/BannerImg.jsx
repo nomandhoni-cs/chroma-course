@@ -11,6 +11,7 @@ export const BannerImg = ({ halfBanner }) => {
   const bannerSvg = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
+      className="w-full h-auto"
       width="855.47002"
       height="681.75536"
       viewBox="0 0 855.47002 681.75536"
@@ -94,7 +95,7 @@ export const BannerImg = ({ halfBanner }) => {
   return (
     <div className="banner-img">
       {/* <img className="w-full" src={bannerSvg} alt="" /> */}
-      <div className="w-full">{bannerSvg}</div>
+      <div>{bannerSvg}</div>
     </div>
   );
 };
