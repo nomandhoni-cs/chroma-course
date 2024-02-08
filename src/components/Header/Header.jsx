@@ -1,94 +1,254 @@
-import { Container } from "react-bootstrap";
-import "./Header.css";
-import { Link, NavLink } from "react-router-dom";
-import { BsCartPlusFill } from "react-icons/bs";
-import Navbar from "react-bootstrap/Navbar";
+import { Fragment, useState } from "react";
+import { Dialog, Popover } from "@headlessui/react";
+import { Switch } from "@headlessui/react";
+import { HiOutlineX, HiOutlineMenu, HiShoppingCart } from "react-icons/hi";
+import { NavLink, Link } from "react-router-dom";
+import Button from "../Button/Button";
+import { useTheme } from "../ThemeToggle";
+import { Disclosure, Menu, Transition } from "@headlessui/react";
+const navLinks = [
+  { to: "/programming", text: "Programming", current: false },
+  { to: "/design", text: "Design", current: false },
+  { to: "/crafts", text: "Crafts", current: false },
+];
 
-export const Header = ({ logo, cart, user, loginSignupHandler, handleSignOut }) => {
-  // Login and Signup button
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
+
+const Header = ({ logo, cart, user, handleSignOut }) => {
+  const { isDarkMode, toggleDarkMode } = useTheme();
+
   const loginSignup = (
-    <>
-      <NavLink to="/login" className="btn normalBtn">
-        Login
+    <div className="flex space-x-4">
+      <NavLink to="/login">
+        <Button text={"Log in"} />
       </NavLink>
-      <NavLink to="/signup" className="btn filledBtn" >
-        Sign Up
+      <NavLink to="/signup">
+        <Button text={"Sign Up"} />
       </NavLink>
-    </>
+    </div>
   );
-  // Logout button and avatar
-  const logoutAndAvatar = (
-    <>
-      <img className="avatar" src={user.photo} alt={user.name}/>
-      <NavLink className="btn filledBtn" onClick={handleSignOut}>
-        Sign Out
-      </NavLink>
-    </>
-  );
+
   return (
-    <>
-      <header>
-        <div className="header-area">
-          <Navbar bg="light" expand="lg">
-            <Container className="text-center">
-              <Navbar.Toggle aria-controls="basic-navbar-nav" />
-              <div className="logo navbar-brand">
-                <Link to="/">
-                  <img src={logo} alt="Website logo" />
-                </Link>
+    <Disclosure as="nav" className="bg-light-primary dark:bg-dark-primary">
+      {({ open }) => (
+        <>
+          <div className="mx-auto container px-2 sm:px-6 lg:px-8">
+            <div className="relative flex h-16 items-center justify-between">
+              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                {/* Mobile menu button*/}
+                <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                  <span className="absolute -inset-0.5" />
+                  <span className="sr-only">Open main menu</span>
+                  {open ? (
+                    <HiOutlineX className="block h-6 w-6" aria-hidden="true" />
+                  ) : (
+                    <HiOutlineMenu
+                      className="block h-6 w-6"
+                      aria-hidden="true"
+                    />
+                  )}
+                </Disclosure.Button>
               </div>
-              <Navbar.Collapse
-                id="basic-navbar-nav"
-                className="main-menu text-center me-auto navbar-nav"
-              >
-                <ul>
-                  <li>
-                    <NavLink
-                      to="/programming"
-                      style={({ isActive }) => {
-                        return { color: isActive ? "#04f06a" : "" };
-                      }}
-                    >
-                      Programming
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink
-                      to="/design"
-                      style={({ isActive }) => {
-                        return { color: isActive ? "#04f06a" : "" };
-                      }}
-                    >
-                      Design
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink
-                      to="/crafts"
-                      style={({ isActive }) => {
-                        return { color: isActive ? "#04f06a" : "" };
-                      }}
-                    >
-                      Crafts
-                    </NavLink>
-                  </li>
-                </ul>
-              </Navbar.Collapse>
-              <div className="navbar-brand">
-                <Link to="/checkout" className="btn">
-                  <BsCartPlusFill /> <p className="cart-count">{cart.length}</p>
-                </Link>
+              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                <div className="flex flex-shrink-0 items-center">
+                  <Link to="/">
+                    <img
+                      className="h-8 w-auto"
+                      src={logo}
+                      alt="Chroma Course"
+                    />
+                  </Link>
+                </div>
+                <div className="hidden sm:ml-6 sm:block">
+                  <div className="flex space-x-4">
+                    {navLinks.map((item) => (
+                      <NavLink
+                        key={item.to}
+                        to={item.to}
+                        className={classNames(
+                          item.current
+                            ? "bg-gray-900 text-white"
+                            : "text-black hover:bg-light-tertiary hover:text-black dark:hover:bg-dark-tertiary dark:hover:text-white ",
+                          "rounded-md px-3 py-2 text-sm font-body font-semibold"
+                        )}
+                        aria-current={item.current ? "page" : undefined}
+                      >
+                        {item.text}
+                      </NavLink>
+                    ))}
+                  </div>
+                </div>
               </div>
-              <Navbar.Collapse
-                id="basic-navbar-nav"
-                className="main-menu me-auto navbar-nav login-btn f-right"
-              >
-                {user.isSignedIn ? logoutAndAvatar : loginSignup}
-              </Navbar.Collapse>
-            </Container>
-          </Navbar>
-        </div>
-      </header>
-    </>
+              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                <Switch
+                  checked={isDarkMode}
+                  onChange={toggleDarkMode}
+                  className={`${
+                    isDarkMode ? "bg-blue-600" : "bg-gray-200"
+                  } relative inline-flex h-6 w-11 items-center rounded-full`}
+                >
+                  <span className="sr-only">Change Theme</span>
+                  <span
+                    className={`${
+                      isDarkMode ? "translate-x-6" : "translate-x-1"
+                    } inline-block h-4 w-4 transform rounded-full bg-white transition`}
+                  />
+                </Switch>
+                <Link
+                  to="/checkout"
+                  className="relative rounded-full p-1 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                >
+                  <span className="absolute -inset-1.5" />
+                  <span className="sr-only">View Cart</span>
+                  <span className="text-inline">
+                    <HiShoppingCart className="h-6 w-6" aria-hidden="true" />
+                    {cart.length}
+                  </span>
+                </Link>
+
+                {/* Profile dropdown */}
+                <Menu as="div" className="relative ml-3">
+                  <div>
+                    {user.isSignedIn ? (
+                      <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                        <span className="absolute -inset-1.5" />
+                        <span className="sr-only">Open user menu</span>
+                        <img
+                          className="h-8 w-8 rounded-full"
+                          src={user.photo}
+                          alt={user.name}
+                        />
+                      </Menu.Button>
+                    ) : (
+                      loginSignup
+                    )}
+                  </div>
+                  <Transition
+                    as={Fragment}
+                    enter="transition ease-out duration-100"
+                    enterFrom="transform opacity-0 scale-95"
+                    enterTo="transform opacity-100 scale-100"
+                    leave="transition ease-in duration-75"
+                    leaveFrom="transform opacity-100 scale-100"
+                    leaveTo="transform opacity-0 scale-95"
+                  >
+                    <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <Menu.Item>
+                        {({ active }) => (
+                          <a
+                            onClick={handleSignOut}
+                            className={classNames(
+                              active ? "bg-gray-100" : "",
+                              "block px-4 py-2 text-sm text-gray-700"
+                            )}
+                          >
+                            Sign out
+                          </a>
+                        )}
+                      </Menu.Item>
+                    </Menu.Items>
+                  </Transition>
+                </Menu>
+              </div>
+            </div>
+          </div>
+
+          <Disclosure.Panel className="sm:hidden">
+            <div className="space-y-1 px-2 pb-3 pt-2">
+              {navLinks.map((item) => (
+                <NavLink
+                  key={item.to}
+                  to={item.to}
+                  className={classNames(
+                    item.current
+                      ? "bg-gray-900 text-white"
+                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                    "block rounded-md px-3 py-2 text-base font-medium"
+                  )}
+                  aria-current={item.current ? "page" : undefined}
+                >
+                  {item.name}
+                </NavLink>
+              ))}
+            </div>
+          </Disclosure.Panel>
+        </>
+      )}
+    </Disclosure>
   );
 };
+
+// import { BsCartPlusFill } from "react-icons/bs";
+
+// const Header1 = ({ logo, cart, user, handleSignOut }) => {
+//   const loginSignup = (
+//     <>
+//       <NavLink to="/login" className="btn normalBtn">
+//         Login
+//       </NavLink>
+//       <NavLink to="/signup" className="btn filledBtn">
+//         Sign Up
+//       </NavLink>
+//     </>
+//   );
+
+//   const logoutAndAvatar = (
+//     <>
+//       <img className="avatar" src={user.photo} alt={user.name} />
+//       <button className="btn filledBtn" onClick={handleSignOut}>
+//         Sign Out
+//       </button>
+//     </>
+//   );
+
+//   return (
+//     <header className=" bg-white dark:bg-dark-secondary">
+//       <div className="header-area my-2">
+//         <nav className="">
+//           <div className="container mx-auto flex items-center justify-between p-4 rounded-lg bg-light-tertiary dark:bg-dark-tertiary ">
+//             <div className="logo">
+//               <Link to="/">
+//                 <img src={logo} alt="Chroma Course Website logo" />
+//               </Link>
+//             </div>
+//             <div className="main-menu hidden md:flex space-x-4">
+//               <NavLink
+//                 to="/programming"
+//                 activeClassName="text-primary"
+//                 className="font-body text-black dark:text-white "
+//               >
+//                 Programming
+//               </NavLink>
+//               <NavLink
+//                 to="/design"
+//                 activeClassName="text-primary"
+//                 className="font-body text-black dark:text-white "
+//               >
+//                 Design
+//               </NavLink>
+//               <NavLink
+//                 to="/crafts"
+//                 activeClassName="text-primary"
+//                 className="font-body text-black dark:text-white "
+//               >
+//                 Crafts
+//               </NavLink>
+//             </div>
+//             <div className="navbar-brand">
+//               <Link to="/checkout" className="btn">
+//                 <BsCartPlusFill /> <p className="cart-count">{cart.length}</p>
+//               </Link>
+//             </div>
+//             <div className="main-menu hidden md:flex space-x-4">
+//               {user.isSignedIn ? logoutAndAvatar : loginSignup}
+//             </div>
+//           </div>
+//         </nav>
+//       </div>
+//     </header>
+//   );
+// };
+
+export default Header;

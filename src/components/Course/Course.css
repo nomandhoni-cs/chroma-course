@@ -10,7 +10,7 @@
   border-bottom-right-radius: 8px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  margin-bottom: 30px;
+  margin-bottom: 32px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   /* position: relative; */
 }
@@ -18,7 +18,7 @@
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 .course-description{
-  padding: 15px;
+  padding: 16px;
   /* margin-top: 8px; */
 }
 .course-description h5 {
@@ -27,7 +27,7 @@
 }
 .instructor-info {
   display: flex;
-  /* background-color: #04f06a; */
+  /* background-color: #FE4C55; */
 }
 .instructor-name p{
   font-weight: 600;
@@ -37,26 +37,26 @@
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  border: 1px solid black;
+  border: 1px dotted black;
 }
 .instructor-name {
-  margin-left: 15px;
-  margin-top: 15px;
+  margin-left: 16px;
+  margin-top: 16px;
 }
 .price-duration p{
   line-height: 0;
-  padding-top: 20px;
-  padding-bottom: 4px;
+  padding-top: 16px;
+  padding-bottom: 8px;
 }
 .single-course .btn{
  width: 100%;
  border: none;
- background-color: black;
- color: #04f06a;
- padding: 10px 0;
+ background-color: #FE4C55;
+ color: #FFFFFF;
+ padding: 8px 0;
 }
 .single-course .btn:hover{
- border: 1px solid black;
- background-color: #04f06a;
- color: black;
+ border: 1px solid #FE4C55;
+ background-color: #FFFFFF;
+ color: #FE4C55;
 }

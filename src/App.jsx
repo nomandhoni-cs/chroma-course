@@ -1,7 +1,7 @@
 import "./App.css";
 import logo from "./logo.svg";
 import fakeData from "./Fakedata/fakeData";
-import bannerImage from "./images/topGreenBanner.webp";
+import bannerImage from "./images/topGreenBanner.svg";
 import backgroundImg from "./images/commingsoon.webp";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
@@ -152,6 +152,7 @@ function App() {
                   addToCart={addToCart}
                   cart={cart}
                   unitPrice={unitPrice}
+                  className="bg-light-secondary dark:bg-dark-secondary"
                 />
               }
             />

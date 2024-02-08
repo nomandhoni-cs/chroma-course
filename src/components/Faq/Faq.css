@@ -1,10 +1,9 @@
 .accordion{
---bs-accordion-active-color: #04f06a !important;
+--bs-accordion-active-color: #FE4C55 !important;
 --bs-accordion-active-bg: #ffffff;
 margin-bottom: 40px;
 margin-top: 40px;
 }
 .faq-heading h2{
-    font-size: 36px;
     font-weight: 600;
 }
