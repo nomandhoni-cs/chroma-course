@@ -1,11 +1,11 @@
 import { Fragment, useState } from "react";
 import { Dialog, Popover } from "@headlessui/react";
-import { Switch } from "@headlessui/react";
 import { HiOutlineX, HiOutlineMenu, HiShoppingCart } from "react-icons/hi";
 import { NavLink, Link } from "react-router-dom";
 import Button from "../Button/Button";
 import { useTheme } from "../ThemeToggle";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { HiSun, HiMoon } from "react-icons/hi2";
 const navLinks = [
   { to: "/programming", text: "Programming", current: false },
   { to: "/design", text: "Design", current: false },
@@ -82,20 +82,14 @@ const Header = ({ logo, cart, user, handleSignOut }) => {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <Switch
-                  checked={isDarkMode}
-                  onChange={toggleDarkMode}
-                  className={`${
-                    isDarkMode ? "bg-blue-600" : "bg-gray-200"
-                  } relative inline-flex h-6 w-11 items-center rounded-full`}
+                <button
+                  className="invisible sm:visible"
+                  onClick={toggleDarkMode}
                 >
+                  {isDarkMode ? <HiMoon /> : <HiSun />}
                   <span className="sr-only">Change Theme</span>
-                  <span
-                    className={`${
-                      isDarkMode ? "translate-x-6" : "translate-x-1"
-                    } inline-block h-4 w-4 transform rounded-full bg-white transition`}
-                  />
-                </Switch>
+                </button>
+
                 <Link
                   to="/checkout"
                   className="relative rounded-full p-1 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
@@ -164,14 +158,26 @@ const Header = ({ logo, cart, user, handleSignOut }) => {
                   className={classNames(
                     item.current
                       ? "bg-gray-900 text-white"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                    "block rounded-md px-3 py-2 text-base font-medium"
+                      : "text-black hover:bg-light-tertiary hover:text-black dark:hover:bg-dark-tertiary dark:hover:text-white ",
+                    "block rounded-md px-3 py-2 text-base font-body font-semibold"
                   )}
                   aria-current={item.current ? "page" : undefined}
                 >
-                  {item.name}
+                  {item.text}
                 </NavLink>
               ))}
+            </div>
+            <div className="space-y-1 px-2 pb-3 pt-2">
+              <button onClick={toggleDarkMode}>
+                <span className="font-body font-semibold inline-flex items-center space-x-2">
+                  {isDarkMode ? (
+                    <HiMoon className="mx-3" />
+                  ) : (
+                    <HiSun className="mx-3" />
+                  )}{" "}
+                  Change Theme
+                </span>
+              </button>
             </div>
           </Disclosure.Panel>
         </>

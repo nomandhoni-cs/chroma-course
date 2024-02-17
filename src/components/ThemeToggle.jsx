@@ -7,13 +7,18 @@ export const ThemeProvider = ({ children }) => {
 
   useEffect(() => {
     // Check if dark mode is enabled
-    setIsDarkMode(document.documentElement.classList.contains("dark"));
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      setIsDarkMode(savedTheme === "dark");
+      document.documentElement.classList.add(savedTheme);
+    } else {
+      setIsDarkMode(document.documentElement.classList.contains("dark"));
+    }
   }, []);
 
   const toggleDarkMode = () => {
     const newIsDarkMode = !isDarkMode;
     setIsDarkMode(newIsDarkMode);
-
     if (newIsDarkMode) {
       document.documentElement.classList.add("dark");
       localStorage.theme = "dark";
