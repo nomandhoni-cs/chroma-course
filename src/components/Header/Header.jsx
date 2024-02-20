@@ -83,10 +83,14 @@ const Header = ({ logo, cart, user, handleSignOut }) => {
               </div>
               <div className="absolute inset-y-0 right-0 flex space-x-4 items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <button
-                  className="hidden sm:block h-6 w-6"
+                  className="hidden sm:block border-2 border-light-tertiary dark:border-dark-tertiary p-2 rounded-lg"
                   onClick={toggleDarkMode}
                 >
-                  {isDarkMode ? <HiMoon /> : <HiSun />}
+                  {isDarkMode ? (
+                    <HiMoon className="h-6 w-6" />
+                  ) : (
+                    <HiSun className="h-6 w-6 text-white" />
+                  )}
                   <span className="sr-only">Change Theme</span>
                 </button>
 
