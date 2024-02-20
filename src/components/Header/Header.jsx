@@ -81,9 +81,9 @@ const Header = ({ logo, cart, user, handleSignOut }) => {
                   </div>
                 </div>
               </div>
-              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+              <div className="absolute inset-y-0 right-0 flex space-x-4 items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <button
-                  className="invisible sm:visible"
+                  className="hidden sm:block h-6 w-6"
                   onClick={toggleDarkMode}
                 >
                   {isDarkMode ? <HiMoon /> : <HiSun />}
@@ -92,18 +92,19 @@ const Header = ({ logo, cart, user, handleSignOut }) => {
 
                 <Link
                   to="/checkout"
-                  className="relative rounded-full p-1 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                  className="flex items-center space-x-2 text-gray-700 hover:text-gray-900 flex-row-reverse"
                 >
-                  <span className="absolute -inset-1.5" />
                   <span className="sr-only">View Cart</span>
-                  <span className="text-inline">
+                  <div className="relative">
                     <HiShoppingCart className="h-6 w-6" aria-hidden="true" />
-                    {cart.length}
-                  </span>
+                    <span className="absolute left-3 bottom-3 inline-flex items-center justify-center px-2 py-1 text-xs font-bold text-black dark:text-white bg-white dark:bg-red-500 rounded-full">
+                      {cart.length}
+                    </span>
+                  </div>
                 </Link>
 
                 {/* Profile dropdown */}
-                <Menu as="div" className="relative ml-3">
+                <Menu as="div" className="invisible sm:visible relative ml-3">
                   <div>
                     {user.isSignedIn ? (
                       <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
@@ -178,6 +179,25 @@ const Header = ({ logo, cart, user, handleSignOut }) => {
                   Change Theme
                 </span>
               </button>
+            </div>
+            <div className="space-y-1 px-2 pb-3 pt-2">
+              <Menu as="div">
+                <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                  <Menu.Item>
+                    {({ active }) => (
+                      <a
+                        onClick={handleSignOut}
+                        className={classNames(
+                          active ? "bg-gray-100" : "",
+                          "block px-4 py-2 text-sm text-gray-700"
+                        )}
+                      >
+                        Sign out
+                      </a>
+                    )}
+                  </Menu.Item>
+                </Menu.Items>
+              </Menu>
             </div>
           </Disclosure.Panel>
         </>
