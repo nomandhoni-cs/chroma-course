@@ -50,11 +50,11 @@ const Footer = () => {
   const thisYear = new Date();
 
   return (
-    <footer className="bg-light-secondary dark:bg-dark-secondary">
-      <div className="mx-auto container py-10 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 items-center justify-items-center bg-light-tertiary dark:bg-dark-tertiary rounded-lg">
+    <footer className="bg-light-tertiary dark:bg-dark-tertiary">
+      <div className="mx-auto py-10 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 justify-items-center">
         {footerItems.map((column, columnIndex) => (
           <div key={columnIndex} className="col-span-1 xl:col-span-1">
-            <ul className="flex flex-col items-center space-y-2">
+            <ul className="flex flex-col space-y-2">
               {column.map((item, index) => (
                 <li key={index}>
                   {item.to ? (

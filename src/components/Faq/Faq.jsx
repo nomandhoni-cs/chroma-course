@@ -39,7 +39,7 @@ const Faq = () => {
     <div className="faq-section bg-light-secondary dark:bg-dark-secondary py-10">
       <div className="container mx-auto p-8">
         <div className="faq-heading text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold font-heading mb-8 text-light-primary dark:text-dark-primary">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold font-heading mb-10 md:mb-16 lg:mb-24 text-light-primary dark:text-dark-primary">
             Frequently Asked Questions
           </h2>
         </div>
@@ -48,7 +48,7 @@ const Faq = () => {
             <Disclosure key={index}>
               {({ open }) => (
                 <>
-                  <Disclosure.Button className="flex w-full justify-between px-4 py-2 text-left text-xl md:text-2xl lg:text-3xl font-heading font-medium text-light-primary dark:text-dark-primary hover:bg-light-tertiary dark:hover:bg-dark-tertiary border-2 border-transparent border-b-light-primary dark:border-b-dark-primary">
+                  <Disclosure.Button className="flex w-full justify-between px-4 py-2 text-left text-xl md:text-2xl lg:text-3xl font-heading font-medium text-light-primary dark:text-dark-primary hover:bg-light-tertiary dark:hover:bg-dark-tertiary border border-transparent border-b-light-primary dark:border-b-dark-primary">
                     <span>{faq.question}</span>
                     <HiPlus
                       className={`${
