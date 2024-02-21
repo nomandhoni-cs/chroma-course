@@ -20,6 +20,8 @@ import {
 } from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
 import { firebaseConfig } from "./firebase.config";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const app = initializeApp(firebaseConfig);
 getAnalytics(app);
@@ -67,7 +69,6 @@ function App() {
         // The AuthCredential type that was used.
         const credential = GoogleAuthProvider.credentialFromError(error);
         console.log("Error", errorCode, errorMessage, email, credential);
-        // ...
       });
   };
 
@@ -87,19 +88,19 @@ function App() {
         setUser(signedOutUser);
       })
       .catch((error) => {
-        // An error happened.
         console.log("Error", error);
       });
   };
 
   // Add cart function
   const addToCart = (course, in_cart) => {
-    //Check if the course is already in the cart
     const ifCourseExist = cart.find(
       (singleCourse) => singleCourse.id === course.id
     );
     if (ifCourseExist) {
-      alert("Course already added to cart");
+      toast.error("Course already added to cart", {
+        position: "bottom-right",
+      });
     } else {
       const currentProductId = course.id;
       // Add in_cart property to the course object
@@ -110,6 +111,9 @@ function App() {
       setUnitPrice(course.price);
       in_cart = !in_cart;
       // console.log("Course", ifCourseExist, fakeData)
+      toast.success("Course added", {
+        position: "bottom-right",
+      });
       console.log("Course added ", course, in_cart);
     }
   };
