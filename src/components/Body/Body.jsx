@@ -5,7 +5,7 @@ import { BannerText } from "../BannerText/BannerText.jsx";
 
 export const Body = ({ halfBanner }) => {
   return (
-    <div className="hero-section bg-light-secondary dark:bg-dark-secondary">
+    <div className="mt-0 md:mt-16 bg-light-secondary dark:bg-dark-secondary">
       <div className="container mx-auto rounded-lg bg-light-tertiary mt-5 dark:bg-dark-tertiary">
         <div className="top-banner p-12 md:p-16 lg:p-20">
           <div className="flex flex-col items-center md:flex-row">

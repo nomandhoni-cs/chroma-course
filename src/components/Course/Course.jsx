@@ -46,7 +46,7 @@ const Course = (props) => {
         </div>
         <div className="add-cart-btn text-center mt-4">
           <Button
-            styleClass={`flex items-center justify-center bg-light-primary dark:bg-dark-primary hover:bg-light-tertiary hover:border-light-primary dark:hover:bg-dark-tertiary dark:hover:text-white dark:hover:border-dark-primary`}
+            styleClass={`flex items-center text-white hover:text-black dark:text-black justify-center bg-light-primary dark:bg-dark-primary hover:bg-light-tertiary border-white dark:border-dark-tertiary hover:border-light-primary dark:hover:bg-dark-tertiary dark:hover:text-white dark:hover:border-dark-primary`}
             icon={
               in_cart === false ? (
                 <BsCartPlusFill className="mr-1" />
