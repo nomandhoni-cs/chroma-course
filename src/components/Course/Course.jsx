@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../Button/Button";
-import { BsCartPlusFill, BsFillCartCheckFill } from "react-icons/bs";
+import { BsFillCartCheckFill } from "react-icons/bs";
+import { HiShoppingCart } from "react-icons/hi";
 
 const Course = (props) => {
   const {
@@ -21,7 +22,9 @@ const Course = (props) => {
         className="h-56 w-full object-cover"
       />
       <div className="p-3">
-        <h3 className="text-lg font-semibold dark:text-white mb-2">{title}</h3>
+        <h3 className="text-lg font-semibold pt-1 pb-5 font-heading dark:text-white mb-2">
+          {title}
+        </h3>
         <div className="instructor-info flex items-center mb-2">
           <div className="instructor-photo w-8 h-8 rounded-full overflow-hidden">
             <img
@@ -30,14 +33,14 @@ const Course = (props) => {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="instructor-name ml-2">
-            <p className="text-sm text-gray-700 dark:text-gray-300">
+          <div className="pb-3 ml-2">
+            <p className="text-base font-body text-gray-600 dark:text-gray-300">
               {instructor}
             </p>
           </div>
         </div>
-        <div className="price-duration grid grid-cols-2 mb-2">
-          <p className="text-sm text-gray-600 dark:text-gray-400">
+        <div className="py-3 grid grid-cols-2 mb-2">
+          <p className="text-sm text-gray-700 dark:text-gray-200">
             <small>Price:</small> <b>${price}</b>
           </p>
           <p className="text-sm text-gray-600 dark:text-gray-400">
@@ -46,10 +49,10 @@ const Course = (props) => {
         </div>
         <div className="add-cart-btn text-center mt-4">
           <Button
-            styleClass={`flex items-center justify-center bg-light-primary dark:bg-dark-primary hover:bg-light-tertiary hover:border-light-primary dark:hover:bg-dark-tertiary dark:hover:text-white dark:hover:border-dark-primary`}
+            styleClass={`flex items-center text-white hover:text-black dark:text-black justify-center bg-light-primary dark:bg-dark-primary hover:bg-light-tertiary border-white dark:border-dark-tertiary hover:border-light-primary dark:hover:bg-dark-tertiary dark:hover:text-white dark:hover:border-dark-primary`}
             icon={
               in_cart === false ? (
-                <BsCartPlusFill className="mr-1" />
+                <HiShoppingCart className="mr-1" />
               ) : (
                 <BsFillCartCheckFill className="mr-1" />
               )
