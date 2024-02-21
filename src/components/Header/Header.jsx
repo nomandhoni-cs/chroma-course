@@ -22,10 +22,16 @@ const Header = ({ logo, cart, user, handleSignOut }) => {
   const loginSignup = (
     <div className="flex space-x-4">
       <NavLink to="/login">
-        <Button text={"Log in"} />
+        <Button
+          styleClass={`bg-black text-white border-none transition duration-300 ease-in-out hover:bg-gray-800`}
+          text={"Log in"}
+        />
       </NavLink>
       <NavLink to="/signup">
-        <Button text={"Sign Up"} />
+        <Button
+          styleClass={`bg-light-secondary border-none transition duration-300 ease-in-out hover:bg-gray-200`}
+          text={"Sign Up"}
+        />
       </NavLink>
     </div>
   );
@@ -42,11 +48,11 @@ const Header = ({ logo, cart, user, handleSignOut }) => {
                   <span className="absolute -inset-0.5" />
                   <span className="sr-only">Open main menu</span>
                   {open ? (
-                    <HiOutlineX className="block h-6 w-6" aria-hidden="true" />
+                    <HiOutlineX className="block h-6 w-6" ariaHidden="true" />
                   ) : (
                     <HiOutlineMenu
                       className="block h-6 w-6"
-                      aria-hidden="true"
+                      ariaHidden="true"
                     />
                   )}
                 </Disclosure.Button>
@@ -100,7 +106,7 @@ const Header = ({ logo, cart, user, handleSignOut }) => {
                 >
                   <span className="sr-only">View Cart</span>
                   <div className="relative">
-                    <HiShoppingCart className="h-6 w-6" aria-hidden="true" />
+                    <HiShoppingCart className="h-6 w-6" ariaHidden="true" />
                     <span className="absolute left-3 bottom-3 inline-flex items-center justify-center px-2 py-1 text-xs font-bold text-black dark:text-white bg-white dark:bg-red-500 rounded-full">
                       {cart.length}
                     </span>
@@ -209,76 +215,5 @@ const Header = ({ logo, cart, user, handleSignOut }) => {
     </Disclosure>
   );
 };
-
-// import { BsCartPlusFill } from "react-icons/bs";
-
-// const Header1 = ({ logo, cart, user, handleSignOut }) => {
-//   const loginSignup = (
-//     <>
-//       <NavLink to="/login" className="btn normalBtn">
-//         Login
-//       </NavLink>
-//       <NavLink to="/signup" className="btn filledBtn">
-//         Sign Up
-//       </NavLink>
-//     </>
-//   );
-
-//   const logoutAndAvatar = (
-//     <>
-//       <img className="avatar" src={user.photo} alt={user.name} />
-//       <button className="btn filledBtn" onClick={handleSignOut}>
-//         Sign Out
-//       </button>
-//     </>
-//   );
-
-//   return (
-//     <header className=" bg-white dark:bg-dark-secondary">
-//       <div className="header-area my-2">
-//         <nav className="">
-//           <div className="container mx-auto flex items-center justify-between p-4 rounded-lg bg-light-tertiary dark:bg-dark-tertiary ">
-//             <div className="logo">
-//               <Link to="/">
-//                 <img src={logo} alt="Chroma Course Website logo" />
-//               </Link>
-//             </div>
-//             <div className="main-menu hidden md:flex space-x-4">
-//               <NavLink
-//                 to="/programming"
-//                 activeClassName="text-primary"
-//                 className="font-body text-black dark:text-white "
-//               >
-//                 Programming
-//               </NavLink>
-//               <NavLink
-//                 to="/design"
-//                 activeClassName="text-primary"
-//                 className="font-body text-black dark:text-white "
-//               >
-//                 Design
-//               </NavLink>
-//               <NavLink
-//                 to="/crafts"
-//                 activeClassName="text-primary"
-//                 className="font-body text-black dark:text-white "
-//               >
-//                 Crafts
-//               </NavLink>
-//             </div>
-//             <div className="navbar-brand">
-//               <Link to="/checkout" className="btn">
-//                 <BsCartPlusFill /> <p className="cart-count">{cart.length}</p>
-//               </Link>
-//             </div>
-//             <div className="main-menu hidden md:flex space-x-4">
-//               {user.isSignedIn ? logoutAndAvatar : loginSignup}
-//             </div>
-//           </div>
-//         </nav>
-//       </div>
-//     </header>
-//   );
-// };
 
 export default Header;
