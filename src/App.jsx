@@ -9,7 +9,7 @@ import Checkout from "./components/Checkout/Checkout";
 import SharedLayout from "./components/SharedLayout/SharedLayout";
 import Home from "./components/Home/Home";
 import CatagoryWiseProduct from "./components/CatagoryWiseProduct/CatagoryWiseProduct";
-import ComingSoonPage from "./components/ComingSoonPage.js/ComingSoonPage";
+import ComingSoonPage from "./components/ComingSoonPage/ComingSoonPage";
 import Login from "./components/Login/Login";
 import { initializeApp } from "firebase/app";
 import {

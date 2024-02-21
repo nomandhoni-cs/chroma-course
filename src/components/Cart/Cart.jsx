@@ -11,7 +11,7 @@ export const Cart = (props) => {
   const tax = parseFloat((totalPrice * 0.12).toFixed(1));
   const total = (tax + totalPrice).toFixed(1);
   return (
-    <div className="container bg-light-tertiary dark:bg-dark-tertiary shadow rounded-lg p-6 my-16">
+    <div className="bg-light-tertiary dark:bg-dark-tertiary shadow rounded-lg p-6 my-16">
       <h1 className="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4 flex items-center">
         <HiShoppingCart className="mr-2" /> Your Cart
       </h1>

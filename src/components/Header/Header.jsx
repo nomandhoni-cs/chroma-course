@@ -1,5 +1,5 @@
 import { Fragment, useState } from "react";
-import { Dialog, Popover } from "@headlessui/react";
+// import { Dialog, Popover } from "@headlessui/react";
 import { HiOutlineX, HiOutlineMenu, HiShoppingCart } from "react-icons/hi";
 import { NavLink, Link } from "react-router-dom";
 import Button from "../Button/Button";
