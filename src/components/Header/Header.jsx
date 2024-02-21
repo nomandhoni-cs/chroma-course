@@ -1,5 +1,5 @@
 import { Fragment, useState } from "react";
-import { Dialog, Popover } from "@headlessui/react";
+// import { Dialog, Popover } from "@headlessui/react";
 import { HiOutlineX, HiOutlineMenu, HiShoppingCart } from "react-icons/hi";
 import { NavLink, Link } from "react-router-dom";
 import Button from "../Button/Button";
@@ -34,7 +34,7 @@ const Header = ({ logo, cart, user, handleSignOut }) => {
     <Disclosure as="nav" className="bg-light-primary dark:bg-dark-primary">
       {({ open }) => (
         <>
-          <div className="mx-auto container px-2 sm:px-6 lg:px-8">
+          <div className="container px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
