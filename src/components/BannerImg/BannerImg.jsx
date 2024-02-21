@@ -1,13 +1,8 @@
 // BannerImg.jsx
-import React, { useEffect, useState } from "react";
 import { useTheme } from "../ThemeToggle";
 
 export const BannerImg = ({ halfBanner }) => {
   const { isDarkMode } = useTheme();
-  let body = document.body;
-  isDarkMode
-    ? (body.style.backgroundColor = "#111111")
-    : (body.style.backgroundColor = "#FFFFFF");
   const bannerSvg = (
     <svg
       xmlns="http://www.w3.org/2000/svg"

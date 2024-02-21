@@ -22,6 +22,7 @@ import { getAnalytics } from "firebase/analytics";
 import { firebaseConfig } from "./firebase.config";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Notfound from "./components/NotFound/Notfound";
 
 const app = initializeApp(firebaseConfig);
 getAnalytics(app);
@@ -280,6 +281,7 @@ function App() {
               }
             />
           </Route>
+          <Route path="*" element={<Notfound />} />
         </Routes>
       </BrowserRouter>
     </>

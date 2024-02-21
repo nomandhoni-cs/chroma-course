@@ -45,32 +45,34 @@ const Faq = () => {
         </div>
         <div className="space-y-8">
           {faqs.map((faq, index) => (
-            <Disclosure key={index}>
-              {({ open }) => (
-                <>
-                  <Disclosure.Button className="flex w-full justify-between px-4 py-2 text-left text-xl md:text-2xl lg:text-3xl font-heading font-medium text-light-primary dark:text-dark-primary hover:bg-light-tertiary dark:hover:bg-dark-tertiary border border-transparent border-b-light-primary dark:border-b-dark-primary">
-                    <span>{faq.question}</span>
-                    <HiPlus
-                      className={`${
-                        open ? "rotate-180 transform" : ""
-                      } h-8 w-8 text-light-primary dark:text-dark-primary`}
-                    />
-                  </Disclosure.Button>
-                  <Transition
-                    enter="transition duration-100 ease-out"
-                    enterFrom="transform scale-95 opacity-0"
-                    enterTo="transform scale-100 opacity-100"
-                    leave="transition duration-75 ease-out"
-                    leaveFrom="transform scale-100 opacity-100"
-                    leaveTo="transform scale-95 opacity-0"
-                  >
-                    <Disclosure.Panel className="px-4 pb-2 pt-4 font-body text-base md:text-lg lg:text-xl text-gray-700 dark:text-gray-200">
-                      {faq.answer}
-                    </Disclosure.Panel>
-                  </Transition>
-                </>
-              )}
-            </Disclosure>
+            <div className="border border-transparent border-b-light-primary dark:border-b-dark-primary">
+              <Disclosure key={index}>
+                {({ open }) => (
+                  <>
+                    <Disclosure.Button className="flex w-full justify-between px-4 py-2 text-left text-xl md:text-2xl lg:text-3xl font-heading font-medium text-light-primary dark:text-dark-primary hover:bg-light-tertiary dark:hover:bg-dark-tertiary">
+                      <span>{faq.question}</span>
+                      <HiPlus
+                        className={`${
+                          open ? "rotate-180 transform" : ""
+                        } h-8 w-8 text-light-primary dark:text-dark-primary`}
+                      />
+                    </Disclosure.Button>
+                    <Transition
+                      enter="transition duration-100 ease-out"
+                      enterFrom="transform scale-95 opacity-0"
+                      enterTo="transform scale-100 opacity-100"
+                      leave="transition duration-75 ease-out"
+                      leaveFrom="transform scale-100 opacity-100"
+                      leaveTo="transform scale-95 opacity-0"
+                    >
+                      <Disclosure.Panel className="px-4 pb-2 pt-4 font-body text-base md:text-lg lg:text-xl text-gray-700 dark:text-gray-200">
+                        {faq.answer}
+                      </Disclosure.Panel>
+                    </Transition>
+                  </>
+                )}
+              </Disclosure>
+            </div>
           ))}
         </div>
       </div>
